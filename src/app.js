@@ -1,41 +1,58 @@
 const express = require('express');
 const path = require('path');
-const pool = require('../config/db');
+// En lugar de:
+// const pool = require('../config/db');
+
+// Usa:
+const { getPool } = require('../config/db');
+const pool = getPool();
+const mercadopago = require('mercadopago');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
+
+//-------------------------------
+// Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Ruta para mostrar productos
-app.get('/productos', async (req, res) => {
+
+//-----------------------------
+// Configuración de MercadoPago
+//------------------------------
+mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN);
+
+
+
+//------------
+// Rutas
+//------------
+app.get('/api/products', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM productos');
-        res.json(result.rows);
+        const { rows } = await pool.query('SELECT * FROM productos');
+        res.json(rows);
     } catch (err) {
         console.error(err);
-        res.status(500).send('Error en el servidor');
+        res.status(500).json({ error: 'Error en el servidor' });
     }
 });
 
-// Servir página principal
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+app.get('/api/products/:category', async (req, res) => {
+    const { category } = req.params;
+    try {
+        const { rows } = await pool.query('SELECT * FROM productos WHERE categoria = $1', [category]);
+        res.json(rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
 
-
-/*-------------------
-MERCADO PAGO
---------------------*/
-
-const mercadopago = require('mercadopago');
-mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN);
-
+//----------------------------
 // Ruta para iniciar el pago
+//-----------------------------
 app.post('/pago', async (req, res) => {
     const { productos } = req.body;
 
@@ -60,6 +77,15 @@ app.post('/pago', async (req, res) => {
         res.json({ id: response.body.id });
     } catch (err) {
         console.error(err);
-        res.status(500).send('Error procesando el pago');
+        res.status(500).json({ error: 'Error procesando el pago' });
     }
+});
+
+// Catch-all route para servir el frontend en cualquier ruta no coincidente
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });

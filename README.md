@@ -16,9 +16,32 @@ brandanbites/
 ├── .env                  # Variables de entorno (por ejemplo, claves API)
 └── README.md             # Documentación del proyecto
 
+# Brandan Bites
+
+Brandan Bites es un kiosco virtual que ofrece una variedad de productos en tres categorías: dulces, salados y bebidas.
+
+## Configuración
+
+1. Asegúrate de tener Node.js y PostgreSQL instalados en tu sistema.
+
+2. Clona este repositorio:
+   ```
+   git clone https://github.com/tu-usuario/brandan-bites.git
+   cd brandan-bites
+   ```
+
+3. Instala las dependencias:
+   ```
+   npm install
+   ```
+
+4. Configura la base de datos:
+   - Crea una base de datos llamada `brandan_bites` en PostgreSQL.
+   - Ejecuta el siguiente script SQL para crear la tabla de 
 
 
-se usa: postgreSQL ; Node.js; html,css,js ; 
+
+se usa: postgreSQL ; Node.js; Express.js ; html,css,js ; 
 
  -------------
 |BASE DE DATOS|

@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrandanBites</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Brandan Bites</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Bienvenidos a BrandanBites</h1>
-    <div id="productos"></div>
-    <button id="comprar">Comprar</button>
+    <header>
+        <h1>Brandan Bites</h1>
+        <nav>
+            <div id="user-area">
+                <span id="user-name">Invitado</span>
+                <button id="login-btn">Iniciar sesión</button>
+            </div>
+            <div id="search-area">
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button id="search-btn">Buscar</button>
+            </div>
+        </nav>
+    </header>
 
-    <script src="/src/app.js"></script>
-    <script src="/public/js/script.js"></script>
+    <main>
+        <div id="categories">
+            <button class="category-btn active" data-category="dulces">Dulces</button>
+            <button class="category-btn" data-category="salados">Salados</button>
+            <button class="category-btn" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <div id="products-grid">
+            <!-- Los productos se cargarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Brandan Bites. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
