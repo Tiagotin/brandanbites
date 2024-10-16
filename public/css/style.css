@@ -23,6 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 2000px;
+    max-height: 1500px;
     margin: 0 auto;
 }
 
@@ -125,15 +126,15 @@ nav ul li.active{
 
 /*=======================Inicio.html=========================*/
 
-#mainInicio{
+#mainLogin {
     display: flex;
     flex: 1;
     width: 100%;
     margin: 0 auto;
 }
-#mainInicio aside, #mainInicio section{padding: 10px;} 
+#mainLogin aside, #mainLogin section{padding: 10px;} 
 
-#mainInicio aside{    
+#mainLogin aside{    
     border-right: solid 1px;
     width: 39%;
     display: flex;
@@ -143,31 +144,31 @@ nav ul li.active{
     gap: 20px;
 }
 
-#mainInicio aside h1, 
-#mainInicio aside .mensaje{
+#mainLogin aside h1, 
+#mainLogin aside .mensaje{
     display: block;
     width: 100%;
 }
 
-#mainInicio h1{
+#mainLogin h1{
     font-size: 2rem;
     text-align: center;
 }
 
-#mainInicio aside .mensaje{
+#mainLogin aside .mensaje{
     border: solid 1px;
     padding: 5px 10px;
     font-size: 0.9rem;
     width: 70%;
 }
 
-#mainInicio section{
+#mainLogin section{
     padding: 50px 60px;
     flex: 1;
     position: relative;
 }
 
-#mainInicio section img{
+#mainLogin section img{
     position: absolute;
     border: solid 1px;
     width: 4.567vw; height: 4.567vw;
@@ -175,30 +176,30 @@ nav ul li.active{
     top: 0;
     transform: translate(-50%, 50%);
 }
-#mainInicio section span, #mainInicio section h1, #mainInicio section .form{
+#mainLogin  section span, #mainLogin section h1, #mainLogin section .form{
     width: 480px;
     margin: 0 auto;
 }
 
-#mainInicio section span{
+#mainLogin  section span{
     display: block;
     margin: 10px 0 25px;
 }
 
-#mainInicio section .form{
+#mainLogin  section .form{
     display: flex;
     flex-direction: column;
 }
 
-#mainInicio section .form label{
+#mainLogin  section .form label{
     margin: 0 3px 5px;
 }
-#mainInicio section .form input{
+#mainLogin  section .form input{
     margin-bottom: 20px;
     padding: 10px 8px;
     font-size: 1rem;
 }
-#mainInicio section .form button{
+#mainLogin  section .form button{
     height: 40px;
     border: none;
     font-size: 1.6rem;
@@ -209,10 +210,148 @@ nav ul li.active{
 
 
 
-/*=======================Productos.html=========================*/
+/*=======================Login.html=========================*/
+#mainInicio{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+}
 
+#mainInicio .catalogo{
+    border: solid 1px;
+    padding: 20px 30px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
+#mainInicio .catalogo .categorias{
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#mainInicio .catalogo .categorias img{
+    border: solid 1px;
+    display: block;
+    width: 270px;
+    height: 350px;
+}
+
+#mainInicio .catalogo .categorias a{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+#mainInicio .catalogo .categorias a:before{
+    content: '';
+    position: absolute;
+    top: -10px; /* Expande hacia arriba */
+    left:  -10px; /* Expande hacia la izquierda */
+    right:  -10px; /* Expande hacia la derecha */
+    bottom:  -10px; /* Expande hacia abajo */
+}
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
+
+/*=======================catalogo.html=========================*/
+#mainCatalogo{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    border: solid 1px;
+}
+
+#mainCatalogo aside{
+    width: 280px;
+    border: solid 1px;
+    padding: 50px 25px 0 35px;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#mainCatalogo aside ul{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#mainCatalogo section{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+}
+#mainCatalogo section .categorias{
+    display: none;
+}
+#mainCatalogo section .categorias.active{
+    display: block;
+}
+#mainCatalogo section .categorias h2{
+    display: flex;
+    gap: 12px;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    >a{
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+}
+
+#mainCatalogo section .categorias .productos{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#mainCatalogo section .categorias .cards{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: max-content max-content 1fr;
+    grid-template-areas: 
+    "img titulo"
+    "img subtitulo"
+    "img extra";
+    padding: 15px 20px;
+    border: solid 1px;
+    border-radius: 10px;
+    h1, span {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+}
+#mainCatalogo section .categorias .cards img{
+    grid-area: img;
+    height: 200px;
+    width: 100%;
+}
+#mainCatalogo section .categorias .cards h1{
+    grid-area: titulo;
+}
+#mainCatalogo section .categorias .cards span{
+    grid-area: subtitulo;
+}
+#mainCatalogo section .categorias .cards .extra{
+    grid-area: extra;
+}
+/*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
+/*=======================.html=========================*/
+/*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
 
 .contenido-principal{
     padding: 15px;
