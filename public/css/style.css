@@ -124,7 +124,7 @@ nav ul li.active{
     text-shadow: 0 0 20px #00000042;
 }
 
-/*=======================Inicio.html=========================*/
+/*=======================Login.html=========================*/
 
 #mainLogin {
     display: flex;
@@ -210,7 +210,8 @@ nav ul li.active{
 
 
 
-/*=======================Login.html=========================*/
+/*=======================Inicio.html=========================*/
+
 #mainInicio{
     display: flex;
     flex: 1;
@@ -221,18 +222,21 @@ nav ul li.active{
 #mainInicio .catalogo{
     border: solid 1px;
     padding: 20px 30px;
+    margin: 0 auto;
     width: 100%;
     display: flex;
-    align-items: start;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
 }
 
 #mainInicio .catalogo .categorias{
-    padding: 20px 15px;
+    width: max-content;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin: 0 auto;
 }
 #mainInicio .catalogo .categorias img{
     border: solid 1px;
@@ -242,6 +246,7 @@ nav ul li.active{
 }
 
 #mainInicio .catalogo .categorias a{
+    width: max-content;
     margin: 0 auto;
     font-size: 1.5rem;
     cursor: pointer;
@@ -256,10 +261,12 @@ nav ul li.active{
     right:  -10px; /* Expande hacia la derecha */
     bottom:  -10px; /* Expande hacia abajo */
 }
+
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 
 /*=======================catalogo.html=========================*/
+
 #mainCatalogo{
     display: flex;
     flex: 1;
