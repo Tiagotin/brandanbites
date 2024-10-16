@@ -4,6 +4,7 @@
     font-style: normal;
     --font-system:
 }
+html, body {height: 100%;}
 
 * {
     padding: 0;
@@ -21,13 +22,15 @@ body {
     padding: 10px 15px;
     font-family: var(--font-system);
     font-style: normal;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 15px;
+    padding: 5px 15px;
     flex-wrap: wrap;
 }
 
@@ -37,8 +40,8 @@ header img{
 }
 
 header h1{
-    flex: 1;
-    font-size: clamp(18px, 3vw + 1rem, 36px);
+    flex: 1;    
+    font-size: clamp(12.6px, 2.1vw + 0.7rem, 25.2px);
 }
 
 header .buscador{
@@ -78,7 +81,6 @@ header .buscador p{width: 250px; font-size: clamp(12px, 1vw + 0.5rem, 18px)}
 }
 
 nav{
-    margin: 10px 0;
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -109,6 +111,69 @@ nav ul li.active{
     font-weight: 700;
     text-shadow: 0 0 20px #00000042;
 }
+
+/*=======================Inicio.html=========================*/
+
+#mainInicio{
+    display: flex;
+    flex: 1;
+}
+#mainInicio aside, #mainInicio section{padding: 10px;} 
+
+#mainInicio aside{    
+    background-image: url(../img/image.jpg);
+    background-position: 0 0; /* Puedes ajustar esto según necesites */
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* Asegura que la imagen llene el contenedor */
+    border: solid 1px;
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 7% 0;
+    font-size: 1.5rem;
+}
+
+
+#mainInicio aside .mensaje{padding: 5px 10px;}
+#mainInicio aside h1, #mainInicio aside .mensaje span{color: #fff; font-weight: 500;}
+#mainInicio aside .mensaje span{font-size: 1.5rem;}
+
+
+
+#mainInicio section{
+    border: solid 1px;
+    padding: 50px;
+    flex: 1;
+}
+#mainInicio section span{
+    display: block;
+    margin: 3px 0 20px;
+}
+
+#mainInicio section .form{
+    display: flex;
+    flex-direction: column;
+}
+
+#mainInicio section .form label{
+    margin: 0 3px 5px;
+}
+#mainInicio section .form input{
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 10px 5px;
+    font-size: 1.2rem;
+}
+#mainInicio section .form button{
+    height: 40px;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+/*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
 
 .contenido-principal{
     padding: 15px;
@@ -147,3 +212,5 @@ nav ul li.active{
 .contenido-metodo-pago{
     border: 2px solid;
 }
+
+
