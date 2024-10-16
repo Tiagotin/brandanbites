@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 :root{
-    font-family: "Roboto Slab", serif;
-    font-style: normal;
-    --font-system:
+    --font-system: "Roboto Slab", serif;
 }
 html, body {height: 100%;}
 
@@ -18,12 +16,14 @@ html, body {height: 100%;}
 body {
     background: #FFEFBA;
     background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); 
     padding: 10px 15px;
     font-family: var(--font-system);
     font-style: normal;
     display: flex;
     flex-direction: column;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 header {
@@ -60,8 +60,17 @@ header .buscador i{
     align-items: center;
     
 }
-header .buscador p{width: 250px; font-size: clamp(12px, 1vw + 0.5rem, 18px)}
-
+header .buscador input{
+    width: 250px; 
+    font-size: clamp(12px, 1vw + 0.5rem, 18px);
+    border: none;
+    border-radius: 8px;
+    color: #292929;
+    background-color: transparent;
+}
+header .buscador input:focus{
+    outline: none;
+}
 .botones{
     display: flex;
     gap: 10px;
@@ -100,12 +109,14 @@ nav ul li {
 nav ul li a::before {
     content: '';
     position: absolute;
-    top: -5px; /* Expande hacia arriba */
-    left:  -5px; /* Expande hacia la izquierda */
-    right:  -5px; /* Expande hacia la derecha */
-    bottom:  -5px; /* Expande hacia abajo */
+    top: -10px; /* Expande hacia arriba */
+    left:  -10px; /* Expande hacia la izquierda */
+    right:  -10px; /* Expande hacia la derecha */
+    bottom:  -10px; /* Expande hacia abajo */
 }
 
+nav ul li a{border-bottom: solid 1px transparent; transition: 0.1s ease-in;}
+nav ul li a:hover{border-bottom: #000 1px solid; text-shadow: 0 0 20px #00000020;}
 
 nav ul li.active{
     font-weight: 700;
@@ -117,39 +128,61 @@ nav ul li.active{
 #mainInicio{
     display: flex;
     flex: 1;
+    width: 100%;
+    margin: 0 auto;
 }
 #mainInicio aside, #mainInicio section{padding: 10px;} 
 
 #mainInicio aside{    
-    background-image: url(../img/image.jpg);
-    background-position: 0 0; /* Puedes ajustar esto según necesites */
-    background-repeat: no-repeat;
-    background-size: 100% 100%; /* Asegura que la imagen llene el contenedor */
-    border: solid 1px;
+    border-right: solid 1px;
     width: 39%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 100px 90px;
     gap: 20px;
-    justify-content: center;
-    padding: 20px 7% 0;
-    font-size: 1.5rem;
 }
 
+#mainInicio aside h1, 
+#mainInicio aside .mensaje{
+    display: block;
+    width: 100%;
+}
 
-#mainInicio aside .mensaje{padding: 5px 10px;}
-#mainInicio aside h1, #mainInicio aside .mensaje span{color: #fff; font-weight: 500;}
-#mainInicio aside .mensaje span{font-size: 1.5rem;}
+#mainInicio h1{
+    font-size: 2rem;
+    text-align: center;
+}
 
-
+#mainInicio aside .mensaje{
+    border: solid 1px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    width: 70%;
+}
 
 #mainInicio section{
-    border: solid 1px;
-    padding: 50px;
+    padding: 50px 60px;
     flex: 1;
+    position: relative;
 }
+
+#mainInicio section img{
+    position: absolute;
+    border: solid 1px;
+    width: 4.567vw; height: 4.567vw;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 50%);
+}
+#mainInicio section span, #mainInicio section h1, #mainInicio section .form{
+    width: 480px;
+    margin: 0 auto;
+}
+
 #mainInicio section span{
     display: block;
-    margin: 3px 0 20px;
+    margin: 10px 0 25px;
 }
 
 #mainInicio section .form{
@@ -162,9 +195,8 @@ nav ul li.active{
 }
 #mainInicio section .form input{
     margin-bottom: 20px;
-    height: 40px;
-    padding: 10px 5px;
-    font-size: 1.2rem;
+    padding: 10px 8px;
+    font-size: 1rem;
 }
 #mainInicio section .form button{
     height: 40px;
@@ -172,8 +204,15 @@ nav ul li.active{
     font-size: 1.6rem;
     cursor: pointer;
 }
+
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
+
+
+/*=======================Productos.html=========================*/
+
+
+/*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 .contenido-principal{
     padding: 15px;
@@ -182,7 +221,6 @@ nav ul li.active{
     background-color: green;
     height: 10rem;
     display: flex;
-    justify-content: ;
 }
 .contenido-carrito-1{
     border: 2px solid;
