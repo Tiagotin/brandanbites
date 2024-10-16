@@ -1,91 +1,59 @@
+// src/app.js
 const express = require('express');
-const path = require('path');
-// En lugar de:
-// const pool = require('../config/db');
-
-// Usa:
-const { getPool } = require('../config/db');
-const pool = getPool();
-const mercadopago = require('mercadopago');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const { connectDB } = require('./config/db');
+const errorHandler = require('./middlewares/errorHandler');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+const transactionRoutes = require('./routes/transactionRoutes');
+require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
 
+// Conectar a la base de datos
+connectDB();
 
-//-------------------------------
-// Middleware
+// Middlewares
+app.use(helmet());
+app.use(cors({
+  origin: 'http://tu-dominio.com', // Reemplaza con tu dominio frontend
+  credentials: true,
+}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(morgan('dev'));
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // Limita a 100 solicitudes por IP
+});
+app.use(limiter);
 
-//-----------------------------
-// Configuración de MercadoPago
-//------------------------------
-mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN);
+// Rutas de la API
+app.use('/api/auth', authRoutes);
+app.use('/api/usuarios', userRoutes);
+app.use('/api/productos', productRoutes);
+app.use('/api/categorias', categoryRoutes);
+app.use('/api/carrito', cartRoutes);
+app.use('/api/pagos', paymentRoutes);
+app.use('/api/transacciones', transactionRoutes);
 
-
-
-//------------
-// Rutas
-//------------
-app.get('/api/products', async (req, res) => {
-    try {
-        const { rows } = await pool.query('SELECT * FROM productos');
-        res.json(rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Error en el servidor' });
-    }
+// Manejo de errores 404
+app.use((req, res, next) => {
+  res.status(404).json({ mensaje: 'Endpoint no encontrado' });
 });
 
-app.get('/api/products/:category', async (req, res) => {
-    const { category } = req.params;
-    try {
-        const { rows } = await pool.query('SELECT * FROM productos WHERE categoria = $1', [category]);
-        res.json(rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Error en el servidor' });
-    }
-});
+// Middleware de manejo de errores
+app.use(errorHandler);
 
-
-//----------------------------
-// Ruta para iniciar el pago
-//-----------------------------
-app.post('/pago', async (req, res) => {
-    const { productos } = req.body;
-
-    const items = productos.map(prod => ({
-        title: prod.nombre,
-        unit_price: prod.precio,
-        quantity: prod.cantidad
-    }));
-
-    const preference = {
-        items,
-        back_urls: {
-            success: 'http://localhost:3000/exito',
-            failure: 'http://localhost:3000/fallo',
-            pending: 'http://localhost:3000/pendiente'
-        },
-        auto_return: 'approved',
-    };
-
-    try {
-        const response = await mercadopago.preferences.create(preference);
-        res.json({ id: response.body.id });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Error procesando el pago' });
-    }
-});
-
-// Catch-all route para servir el frontend en cualquier ruta no coincidente
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+// Inicio del servidor
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });

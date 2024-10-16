@@ -1,0 +1,25 @@
+{
+  "name": "brandanbites",
+  "version": "1.0.0",
+  "description": "brandanbites/\r │\r ├── public/               # Archivos estáticos\r │   ├── css/              # Estilos\r │   ├── js/               # Scripts\r │   └── index.html        # Página principal\r │\r ├── src/                  # Código backend\r │   └── app.js            # Lógica del servidor con Node.js\r │\r ├── config/               # Configuraciones\r │   └── db.js             # Configuración de PostgreSQL\r │\r ├── node_modules/         # Dependencias\r ├── package.json          # Información del proyecto y dependencias\r ├── .env                  # Variables de entorno (por ejemplo, claves API)\r └── README.md             # Documentación del proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.0.15",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.0",
+    "sequelize": "^6.37.4"
+  }
+}
