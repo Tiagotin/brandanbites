@@ -13,11 +13,12 @@ html, body {height: 100%;}
     color: #000;
 }
 
-body {
+body {/* 
     background: #FFEFBA;
     background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA); 
-    padding: 10px 15px;
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);  */
+    background-color: #fff;
+    padding: 10px 0px;
     font-family: var(--font-system);
     font-style: normal;
     display: flex;
@@ -26,7 +27,9 @@ body {
     max-height: 1500px;
     margin: 0 auto;
 }
-
+header, nav{
+    padding: 0 15px;
+}
 header {
     display: flex;
     align-items: center;
@@ -36,12 +39,11 @@ header {
 }
 
 header img{
-    width: 40px;
-    border: solid 1px;
+    margin-left: 50px;
+    max-width: 8%;
 }
 
 header h1{
-    flex: 1;    
     font-size: clamp(12.6px, 2.1vw + 0.7rem, 25.2px);
 }
 
@@ -53,6 +55,8 @@ header .buscador{
     gap: 10px;
     border-radius: 20px;
     padding: 3px 10px;
+    margin: 0 auto;
+    
 }
 
 header .buscador i{
@@ -62,7 +66,7 @@ header .buscador i{
     
 }
 header .buscador input{
-    width: 250px; 
+    width: 450px; 
     font-size: clamp(12px, 1vw + 0.5rem, 18px);
     border: none;
     border-radius: 8px;
@@ -82,10 +86,12 @@ header .buscador input:focus{
 .botones a:nth-child(odd){
     border: solid 1px;
     border-radius: 5px;
-}
+}.botones a:nth-child(even){
+background-color: transparent;}
 .botones a{
     text-decoration: none;
     color: #000;
+    background-color: #FF8C42;;
     padding: 5px;
     font-size: clamp(14px, 2vw + 1rem, 18px);
 }
@@ -122,6 +128,7 @@ nav ul li a:hover{border-bottom: #000 1px solid; text-shadow: 0 0 20px #00000020
 nav ul li.active{
     font-weight: 700;
     text-shadow: 0 0 20px #00000042;
+    border-bottom: #000 1px solid;
 }
 
 /*=======================Login.html=========================*/
@@ -280,6 +287,7 @@ nav ul li.active{
     display: flex;
     flex-direction: column;
     gap: 40px;
+    background-color: #4E598C;
 }
 
 #mainCatalogo aside ul{
@@ -288,18 +296,27 @@ nav ul li.active{
     gap: 25px;
 }
 
+#mainCatalogo aside{
+    > h1, a{
+    color: #fff !important;
+}
+}
+
 #mainCatalogo section{
     padding: 50px;
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 40px;
+    min-height: 600px;
 }
 #mainCatalogo section .categorias{
     display: none;
 }
 #mainCatalogo section .categorias.active{
-    display: block;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 #mainCatalogo section .categorias h2{
     display: flex;
@@ -321,8 +338,11 @@ nav ul li.active{
 }
 
 #mainCatalogo section .categorias .cards{
+    margin: 0 auto;
+    width: 80%;
+    background-color: #FF8C42;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 170px 1fr;
     grid-template-rows: max-content max-content 1fr;
     grid-template-areas: 
     "img titulo"
@@ -331,25 +351,47 @@ nav ul li.active{
     padding: 15px 20px;
     border: solid 1px;
     border-radius: 10px;
-    h1, span {
-        padding: 10px 20px;
-        font-size: 1.5rem;
-        font-weight: normal;
+    > h1{
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    > span{
+        font-size: 1.2rem;
+        font-weight: 400;
     }
 }
 #mainCatalogo section .categorias .cards img{
     grid-area: img;
-    height: 200px;
+    height: 170px;
     width: 100%;
 }
 #mainCatalogo section .categorias .cards h1{
     grid-area: titulo;
+    padding: 0 15px 5px;
 }
 #mainCatalogo section .categorias .cards span{
     grid-area: subtitulo;
+    padding: 0 15px;
 }
 #mainCatalogo section .categorias .cards .extra{
     grid-area: extra;
+}
+
+#mainCatalogo section .categorias .paginacion{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    flex: 1;
+}
+#mainCatalogo section .categorias .paginacion button{
+    border: none;
+    padding: 5px calc(5px * 2.6);
+    border-radius: 50%;
+    border: solid 1px;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
