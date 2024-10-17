@@ -220,7 +220,6 @@ nav ul li.active{
 }
 
 #mainInicio .catalogo{
-    border: solid 1px;
     padding: 20px 30px;
     margin: 0 auto;
     width: 100%;
@@ -272,13 +271,11 @@ nav ul li.active{
     flex: 1;
     width: 100%;
     margin: 0 auto;
-    border: solid 1px;
 }
 
 #mainCatalogo aside{
-    width: 280px;
-    border: solid 1px;
-    padding: 50px 25px 0 35px;
+    border-right: solid 1px;
+    padding: 50px 55px 0 35px;
     font-size: 1.4rem;
     display: flex;
     flex-direction: column;
@@ -356,9 +353,53 @@ nav ul li.active{
 }
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
-/*=======================.html=========================*/
+/*=======================info.html=========================*/
+
+#mainInfo{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    gap: 25px;
+    padding: 60px 60px 30px;
+}
+
+#mainInfo section{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 1.5rem;
+}
+
+#mainInfo #horario{width: 60%;}
+#mainInfo #info{flex: 1;}
+
+
+#mainInfo #horario .calendario, 
+#mainInfo #info .mensaje{
+    border: solid 1px;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    >p{
+        margin: 0 auto;
+    }
+}
+
+#mainInfo #info .mensaje{
+    border: solid 1px;
+    flex: 1;
+}
+
+
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
+
+/*=======================.html=========================*/
+
+/*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 .contenido-principal{
     padding: 15px;
