@@ -444,12 +444,19 @@ nav ul li.active{
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 .contenido-principal{
-    padding: 15px;
+    border: 2px solid;
+    margin: 35px;
+    padding: 35px;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 .contenedor-carrito{
     background-color: green;
     height: 10rem;
     display: flex;
+    width: 100%;
+    
 }
 .contenido-carrito-1{
     border: 2px solid;
@@ -470,14 +477,40 @@ nav ul li.active{
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-
+.contenido-carrito-2A{
+    display: flex;
+    justify-content: end;
+    background-color: #4E598C;
+}
+.contenido-carrito-2B{
+    display: flex;
+    justify-content: end;
+    background-color: #4E598C;
+}
+.contenido-carrito-desplegable{
+}
+.contenido-carrito-2B{
+    display: flex;
+    justify-content: end;
+    background-color: #4E598C;
+}
 .contenido-pedido{
     border: 2px solid;
+    width: 100%;
+    padding: 25px;
+    margin: 35px 0px;
+
 }
+
 .contenido-metodo-pago{
     border: 2px solid;
+    width: 100%;
+    padding: 25px;
 }
 
-
+.contenido-pedido:hover,
+.contenido-metodo-pago:hover{
+    background-color: #6d0000;
+    transition: 0.4s;
+}
