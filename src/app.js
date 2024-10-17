@@ -4,8 +4,11 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-const { connectDB } = require('./config/db');
+const { connectDB } = require('./config/db'); //conexion bd
+
+//rutas
 const errorHandler = require('./middlewares/errorHandler');
+
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -16,6 +19,7 @@ const transactionRoutes = require('./routes/transactionRoutes');
 require('dotenv').config();
 
 const app = express();
+
 
 // Conectar a la base de datos
 connectDB();
