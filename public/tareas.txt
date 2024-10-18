@@ -62,5 +62,30 @@ Registro:
 agregar registro
 
 
-Busqueda:
-agregar busqueda
+Cambiar Tipografia
+inicio: 
+reemplazar imagenes de inicio
+cambiar categoria "galletitas" por snacks
+font-size grande
+/
+bg color #FF8C42
+
+boton login y carrito/
+    #FCAF58
+
+catalogo/
+main #F9C784
+articulos #fff
+
+probar aside/
+#F9C784
+#FCAF58
+#fff
+
+
+login/
+sacar boton registrar
+poner logo
+padding main login
+
+Logo png

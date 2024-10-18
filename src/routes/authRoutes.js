@@ -1,13 +1,14 @@
-// src/routes/authRoutes.js
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-const { validateRegistration, validateLogin } = require('../middlewares/validateMiddleware');
 
 // Ruta de registro
-router.post('/register', validateRegistration, authController.register);
+router.post('/register', authController.register);  // Llama a la función "register" del controlador
 
-// Ruta de login
-router.post('/login', validateLogin, authController.login);
+// Ruta de inicio de sesión
+router.post('/login', authController.login);  // Llama a la función "login" del controlador
+
+// Ruta de logout
+router.post('/logout', authController.logout);  // Llama a la función "logout" del controlador
 
 module.exports = router;

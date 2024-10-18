@@ -62,3 +62,9 @@ exports.login = async (req, res) => {
     res.status(500).json({ mensaje: 'Error en el servidor' });
   }
 };
+
+// Cerrar sesión (logout)
+exports.logout = (req, res) => {
+  // Aquí podrías eliminar el token del lado del cliente o manejarlo en el frontend.
+  res.json({ mensaje: 'Sesión cerrada con éxito' });
+};

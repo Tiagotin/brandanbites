@@ -16,7 +16,7 @@ const Transaction = sequelize.define('Transaction', {
     unique: true,
   },
   status: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM('completado', 'pendiente', 'cancelado'), // Usar ENUM para estados específicos
     allowNull: false,
   },
   amount: {
@@ -29,10 +29,10 @@ const Transaction = sequelize.define('Transaction', {
 });
 
 // Relaciones
-User.hasMany(Transaction, { foreignKey: 'userId' });
-Transaction.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Transaction, { foreignKey: 'id_usuario' }); // Cambié a 'id_usuario' para mantener la consistencia
+Transaction.belongsTo(User, { foreignKey: 'id_usuario' });
 
-Payment.hasMany(Transaction, { foreignKey: 'paymentId' });
-Transaction.belongsTo(Payment, { foreignKey: 'paymentId' });
+Payment.hasMany(Transaction, { foreignKey: 'id_pago' }); // Cambié a 'id_pago'
+Transaction.belongsTo(Payment, { foreignKey: 'id_pago' });
 
 module.exports = Transaction;

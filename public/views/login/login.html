@@ -12,20 +12,18 @@
 
 <body>
     <header>
-        <img src="" alt="Logo">
-        <h1>Nombre</h1>
+        <img src="../../img/logo 2.png" alt="Logo">
+        <h1></h1>
         <div class="buscador">
             <i class="fas fa-search"></i>
             <input type="search" placeholder="Buscar">
         </div>
         <div class="botones">
             <a href="../login/login.html">Iniciar Sesion</a>
-            <a href=""><i class="fas fa-shopping-cart"></i></a>
+            <a href="../pedidos/pedidos.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </header>
 
-    
-    
     <nav>
         <ul>
             <li>
@@ -42,26 +40,41 @@
             </li>
         </ul>
     </nav>
-    </nav>
 
     <main id="mainLogin">
         <aside>
-            <h1>Titulo de la Imagen :)</h1>
+            <h1>¡Bienvenido!</h1>
             <div class="mensaje" >
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio numquam eum accusamus repellat repellendus consequuntur sapiente cumque ipsa enim atque suscipit iste expedita molestiae maiores quam adipisci laboriosam harum, sit nisi veritatis, corrupti ab. Sequi a repudiandae, distinctio maxime id vel eveniet nobis molestiae! Recusandae libero veritatis obcaecati nam labore.</span>
+                <span>
+                    Ingresa al Sitio Web Con Tus Datos Personales
+                </span>
             </div>
         </aside>
-        <section>
+        <section id="iniciarSesion" class="active">
             <img src="" alt="Logo">
             <h1>Iniciar Sesion</h1>
             <div class="form">
-                <span>Es tu Primera vez? Registrate</span>
+                <span>Es tu Primera vez? <a href="../login/registro.html">Registrate</a></span>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email">
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password">
                 <span>Olvidaste tu Contraseña?</span>
                 <button type="submit">Iniciar Sesion</button>
+            </div>
+        </section>
+        <section id="registrarSesion">
+            <img src="" alt="Logo">
+            <h1>Registrate</h1>
+            <div class="form">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password">
+                <label for="repeatPassword">Repetir Contraseña</label>
+                <input type="repeatPassword" id="repeatPassword" name="repeatPassword">
+                <span>¿Ya tenés una Cuenta? <a>Iniciá Sesion</a></span> 
+                <button type="submit">Registrarse</button>
             </div>
         </section>
     </main>

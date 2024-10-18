@@ -1,0 +1,69 @@
+[1mdiff --git a/public/css/style.css b/public/css/style.css[m
+[1mindex 5d2fb8d..c50f146 100644[m
+[1m--- a/public/css/style.css[m
+[1m+++ b/public/css/style.css[m
+[36m@@ -444,12 +444,19 @@[m [mnav ul li.active{[m
+ /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/[m
+ [m
+ .contenido-principal{[m
+[31m-    padding: 15px;[m
+[32m+[m[32m    border: 2px solid;[m[41m[m
+[32m+[m[32m    margin: 35px;[m[41m[m
+[32m+[m[32m    padding: 35px;[m[41m[m
+[32m+[m[32m    display: flex;[m[41m[m
+[32m+[m[32m    flex-wrap: wrap;[m[41m[m
+[32m+[m[41m[m
+ }[m
+ .contenedor-carrito{[m
+     background-color: green;[m
+     height: 10rem;[m
+     display: flex;[m
+[32m+[m[32m    width: 100%;[m[41m[m
+[32m+[m[41m    [m
+ }[m
+ .contenido-carrito-1{[m
+     border: 2px solid;[m
+[36m@@ -470,14 +477,40 @@[m [mnav ul li.active{[m
+     height: 100%;[m
+     display: flex;[m
+     align-items: center;[m
+[31m-    justify-content: center;[m
+ }[m
+[31m-[m
+[32m+[m[32m.contenido-carrito-2A{[m[41m[m
+[32m+[m[32m    display: flex;[m[41m[m
+[32m+[m[32m    justify-content: end;[m[41m[m
+[32m+[m[32m    background-color: #4E598C;[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[32m.contenido-carrito-2B{[m[41m[m
+[32m+[m[32m    display: flex;[m[41m[m
+[32m+[m[32m    justify-content: end;[m[41m[m
+[32m+[m[32m    background-color: #4E598C;[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[32m.contenido-carrito-desplegable{[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[32m.contenido-carrito-2B{[m[41m[m
+[32m+[m[32m    display: flex;[m[41m[m
+[32m+[m[32m    justify-content: end;[m[41m[m
+[32m+[m[32m    background-color: #4E598C;[m[41m[m
+[32m+[m[32m}[m[41m[m
+ .contenido-pedido{[m
+     border: 2px solid;[m
+[32m+[m[32m    width: 100%;[m[41m[m
+[32m+[m[32m    padding: 25px;[m[41m[m
+[32m+[m[32m    margin: 35px 0px;[m[41m[m
+[32m+[m[41m[m
+ }[m
+[32m+[m[41m[m
+ .contenido-metodo-pago{[m
+     border: 2px solid;[m
+[32m+[m[32m    width: 100%;[m[41m[m
+[32m+[m[32m    padding: 25px;[m[41m[m
+ }[m
+ [m
+[31m-[m
+[32m+[m[32m.contenido-pedido:hover,[m[41m[m
+[32m+[m[32m.contenido-metodo-pago:hover{[m[41m[m
+[32m+[m[32m    background-color: #6d0000;[m[41m[m
+[32m+[m[32m    transition: 0.4s;[m[41m[m
+[32m+[m[32m}[m[41m[m
