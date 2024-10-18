@@ -65,13 +65,13 @@ header img{
 }
 
 header h1 {
-    font-size: clamp(12.6px, 2.1vw + 0.7rem, 25.2px);
+    font-size: clamp(12px, 1vw, 24px);
 }
 
 header .buscador {
-    border: solid 1px;
+    border: solid 2px #8993BD;
     padding: 3px;
-    font-size: 1.2rem;
+    font-size: clamp(12px, 1vw, 24px);
     display: flex;
     gap: 10px;
     border-radius: 20px;
@@ -107,12 +107,6 @@ header .buscador input:focus {
 }
 
 
-.botones a:nth-child(odd) {
-    border: solid 1px;
-    border-radius: 5px;
-    font-size: 1.3rem
-}
-
 .botones a:nth-child(even) {
     background-color: transparent;
 }
@@ -125,7 +119,14 @@ header .buscador input:focus {
     padding: 5px;
     font-size: clamp(14px, 2vw + 1rem, 18px);
 }
-
+/*Iniciar Sesion*/
+.botones a:nth-child(1) {
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 5px 20px #0000004d;
+}
 nav {
     width: 100%;
     padding: 15px;
