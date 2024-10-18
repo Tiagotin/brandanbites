@@ -375,6 +375,18 @@ nav ul li.active{
 }
 #mainCatalogo section .categorias .cards .extra{
     grid-area: extra;
+    margin: 0 15px;
+    padding: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+#mainCatalogo section .categorias .cards .extra button{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 #mainCatalogo section .categorias .paginacion{

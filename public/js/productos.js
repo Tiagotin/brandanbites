@@ -82,7 +82,9 @@ function cargarProductos(categoria) {
           <img src="${producto.img}" alt="Imagen">
           <h1>${producto.titulo}</h1>
           <span>${producto.subtitulo}</span>
-          <div class="extra"></div>
+          <div class="extra">
+            <button>Agregar al Carrito</button>
+          </div>
       `;
       productosContainer.appendChild(card);
   });
