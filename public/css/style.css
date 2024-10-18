@@ -1,7 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'League_Spartan';
+    src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
 :root {
-    --font-system: "Roboto Slab", serif;
+    --font-system: Quicksand;
 }
 
 html,
@@ -24,7 +34,7 @@ body {
     background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
     background: linear-gradient(to right, #FFFFFF, #FFEFBA);  */
     background-color: #fff;
-    padding: 10px 0px;
+    padding: 0px 0px;
     font-family: var(--font-system);
     font-style: normal;
     display: flex;
@@ -37,6 +47,7 @@ body {
 header,
 nav {
     padding: 0 15px;
+    background-color: #626FA7;
 }
 
 header {
@@ -66,7 +77,8 @@ header .buscador {
     border-radius: 20px;
     padding: 3px 10px;
     margin: 0 auto;
-width: 48%;
+    width: 48%;
+    background-color: #fff;
 }
 
 header .buscador i {
@@ -98,6 +110,7 @@ header .buscador input:focus {
 .botones a:nth-child(odd) {
     border: solid 1px;
     border-radius: 5px;
+    font-size: 1.3rem
 }
 
 .botones a:nth-child(even) {
@@ -136,22 +149,19 @@ nav ul li a::before {
     content: '';
     position: absolute;
     top: -10px;
-    /* Expande hacia arriba */
     left: -10px;
-    /* Expande hacia la izquierda */
     right: -10px;
-    /* Expande hacia la derecha */
     bottom: -10px;
-    /* Expande hacia abajo */
 }
 
 nav ul li a {
     border-bottom: solid 1px transparent;
     transition: 0.1s ease-in;
+    color: #fff;
 }
 
 nav ul li a:hover {
-    border-bottom: #000 1px solid;
+    border-bottom: #ffffff 1px solid;
     text-shadow: 0 0 20px #00000020;
 }
 
@@ -165,6 +175,7 @@ nav ul li.active {
 
 #mainLogin {
     display: flex;
+    
     width: 90%;
     margin: 0 auto;
 }
@@ -286,6 +297,7 @@ nav ul li.active {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: start;
     gap: 5%;
 }
 
@@ -293,35 +305,30 @@ nav ul li.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    overflow: hidden;
+    transition: 0.5s ease;
+    cursor: pointer;
+    position: relative;
+}
+#mainInicio .catalogo .categorias:hover{
+    transform: scaleX(1.2);
 }
 
 #mainInicio .catalogo .categorias img {
-    border: solid 1px;
     display: block;
     width: 90%;
-    height: 350px;
-}
+    height: 300px;
+  }
 
 #mainInicio .catalogo .categorias a {
     width: max-content;
     margin: 0 auto;
     font-size: 1.5rem;
     cursor: pointer;
-    position: relative;
-}
-
-#mainInicio .catalogo .categorias a:before {
-    content: '';
     position: absolute;
-    top: -10px;
-    /* Expande hacia arriba */
-    left: -10px;
-    /* Expande hacia la izquierda */
-    right: -10px;
-    /* Expande hacia la derecha */
-    bottom: -10px;
-    /* Expande hacia abajo */
+    bottom: 0%;
+    
+    font-weight: 600;
 }
 
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
@@ -339,11 +346,11 @@ nav ul li.active {
 #mainCatalogo aside {
     border-right: solid 1px;
     padding: 50px 55px 0 35px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    background-color: #4E598C;
+    background-color: #FCAF58;
 }
 
 #mainCatalogo aside ul {
@@ -353,10 +360,9 @@ nav ul li.active {
 }
 
 #mainCatalogo aside {
-
     >h1,
     a {
-        color: #fff !important;
+        color: #000 !important;
     }
 }
 
@@ -367,6 +373,7 @@ nav ul li.active {
     width: 100%;
     gap: 40px;
     min-height: 600px;
+    background-color: #F9C784;
 }
 
 #mainCatalogo section .categorias {
@@ -401,8 +408,8 @@ nav ul li.active {
 
 #mainCatalogo section .categorias .cards {
     margin: 0 auto;
-    width: 80%;
-    background-color: #FF8C42;
+    width: 85%;
+    background-color: #fff;
     display: grid;
     grid-template-columns: 170px 1fr;
     grid-template-rows: max-content max-content 1fr;
@@ -411,7 +418,6 @@ nav ul li.active {
         "img subtitulo"
         "img extra";
     padding: 15px 20px;
-    border: solid 1px;
     border-radius: 10px;
 
     >h1 {
@@ -638,7 +644,6 @@ nav ul li.active {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    text-align: ;
 }
 
 .contenido-horarios {
@@ -667,7 +672,34 @@ nav ul li.active {
     @media (max-width:769px){
         header .botones{
             min-width: 100%;
-            justify-content: end;
+            justify-content: space-between;
+        }
+
+        header .botones a {
+            text-decoration: none;
+            color: #000;
+            background-color: #FF8C42;
+            padding: 5px;
+            font-size: clamp(14px, 2vw + 1rem, 18px);
+        }
+
+        #mainCatalogo section .categorias.active .productos{
+            border: solid 4px green;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));    
+            gap: 20px;
+            justify-content: center;
+        }
+        #mainCatalogo section .categorias .cards {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #mainCatalogo section .categorias .cards img{
+            width: 100%;
         }
         header .buscador{
             flex: 1; max-width: 70%; padding: 10px;
@@ -675,22 +707,31 @@ nav ul li.active {
         header .buscador input{
             font-size: clamp(12px, 1vw + 0.8rem, 18px);}
 
+        
+    #mainInicio .catalogo .categorias a {
+            position: absolute;
+            bottom: 0%;
+        }
+            
         /*========================Inicio.html========================*/
         
         #mainInicio .catalogo{
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, max-content);
-            row-gap: 50px;
+            row-gap: 20px;
         }
         #mainInicio .catalogo .categorias{
             max-height: 300px;
         }
 
+        #mainInicio .catalogo .categorias:hover{
+            transform: scale(1);
+        }
         /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
         
     }
 
-    @media (max-width:481px){
+    @media (max-width:551px){
 
         /*========================Inicio.html========================*/
             

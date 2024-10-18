@@ -2,7 +2,15 @@
 const { DataTypes, Model } = require('sequelize');
 const { sequelize } = require('../config/db');
 
-class Category extends Model {}
+class Category extends Model {
+  static async findByName(name) {
+    return await this.findOne({ where: { nombre: name } });
+  }
+
+  static async listAll() {
+    return await this.findAll();
+  }
+}
 
 Category.init({
   id: {
@@ -13,7 +21,16 @@ Category.init({
   nombre: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+    unique: {
+      args: true,
+      msg: 'El nombre de la categoría debe ser único.',
+    },
+    validate: {
+      len: {
+        args: [3, 50],
+        msg: 'El nombre debe tener entre 3 y 50 caracteres.',
+      },
+    },
   },
 }, {
   sequelize,
@@ -21,5 +38,13 @@ Category.init({
   tableName: 'categorias',
   timestamps: true,
 });
+
+// Relación con el modelo Product (si es que existe)
+Category.associate = (models) => {
+  Category.hasMany(models.Product, {
+    foreignKey: 'id_categoria',
+    as: 'productos',
+  });
+};
 
 module.exports = Category;
