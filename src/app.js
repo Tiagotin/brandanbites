@@ -14,7 +14,6 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const cartRoutes = require('./routes/cartRoutes');
-const paymentRoutes = require('./routes/paymentRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
 require('dotenv').config();
 
@@ -45,7 +44,6 @@ app.use('/api/usuarios', userRoutes);
 app.use('/api/productos', productRoutes);
 app.use('/api/categorias', categoryRoutes);
 app.use('/api/carrito', cartRoutes);
-app.use('/api/pagos', paymentRoutes);
 app.use('/api/transacciones', transactionRoutes);
 
 // Manejo de errores 404

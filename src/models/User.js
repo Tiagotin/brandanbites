@@ -17,40 +17,27 @@ User.init({
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     validate: {
       isEmail: true,
-      is: /^[a-zA-Z0-9._%+-]+@insi\.edu\.ar$/, // Solo permite emails con el dominio @insi.edu.ar
     },
   },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  rol: {
-    type: DataTypes.ENUM('admin', 'usuario'),
-    defaultValue: 'usuario',
-  },
   telefono: {
     type: DataTypes.STRING,
-    allowNull: true, // Opcional
-    validate: {
-      len: [10, 15], // Longitud mínima y máxima para teléfonos
-    },
+    allowNull: true,
   },
-  activo: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true, // El usuario está activo por defecto
-  },
-  fecha_ultimo_acceso: {
-    type: DataTypes.DATE,
-    allowNull: true, // Se actualizará cuando el usuario inicie sesión
+  rol: {
+    type: DataTypes.ENUM('usuario', 'admin'), // Define los roles
+    defaultValue: 'usuario', // Por defecto será un usuario normal
   },
 }, {
   sequelize,
   modelName: 'User',
   tableName: 'usuarios',
-  timestamps: true, // Incluye createdAt y updatedAt
+  timestamps: true,
 });
 
 module.exports = User;
