@@ -14,14 +14,3 @@ categorias.forEach(categoria => {
         window.location.href = '../productos/catalogo.html'; // Redirigir a catalogo.html
     });
 });
-
-// Restaurar la sección activa al cargar la página de catálogo
-document.addEventListener('DOMContentLoaded', () => {
-    const storedValue = localStorage.getItem('selectedValue');
-
-    if (storedValue) {
-        cargarProductos(storedValue); // Cargar productos de la categoría almacenada
-    } else {
-        cargarProductos(categoriaActual); // Cargar productos de la categoría por defecto
-    }
-});

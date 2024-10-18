@@ -9,9 +9,9 @@ let categoriaActual = 'comidas'; // Valor inicial
 
 
 // Definición de productos por categoría
-const productosComidas = [
-    { titulo: 'Sebino1', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino2', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
+let productosComidas = [
+    { titulo: 'Titulo', subtitulo: 'Subtitulo', img: '../../img/Sin título.png' },
+    { titulo: 'Pancho', subtitulo: 'Con Papas', img: '../../img/Sin título.png' },
     { titulo: 'Sebino3', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
     { titulo: 'Sebino4', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
     { titulo: 'Sebino5', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
@@ -23,21 +23,21 @@ const productosComidas = [
     // Agrega más productos si es necesario
 ];
 
-const productosBebidas = [
+let productosBebidas = [
     { titulo: 'Coca-Cola', subtitulo: 'Refresco clásico', img: '../../img/Sin título.png' },
     { titulo: 'Agua', subtitulo: 'Agua mineral', img: '../../img/Sin título.png' },
     { titulo: 'Jugo', subtitulo: 'Jugo natural', img: '../../img/Sin título.png' },
     // Agrega más productos si es necesario
 ];
 
-const productosDulces = [
+let productosDulces = [
     { titulo: 'Chocolate', subtitulo: 'Chocolate oscuro', img: '../../img/Sin título.png' },
     { titulo: 'Galleta', subtitulo: 'Galleta de vainilla', img: '../../img/Sin título.png' },
     { titulo: 'Dulce de leche', subtitulo: 'Delicioso dulce de leche', img: '../../img/productos/dulce de leche.png' },
     // Agrega más productos si es necesario
 ];
 
-const productosGalletitas = [
+let productosGalletitas = [
     { titulo: 'Galletita de chocolate', subtitulo: 'Galletita deliciosa', img: '../../img/Sin título.png' },
     { titulo: 'Galletita de vainilla', subtitulo: 'Galletita suave', img: '../../img/Sin título.png' },
     { titulo: 'Galletita rellena', subtitulo: 'Galletita con relleno', img: '../../img/Sin título.png' },

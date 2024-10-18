@@ -39,7 +39,7 @@ body {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    max-width: 2000px;
+    max-width: 2500px;
     max-height: 1500px;
     margin: 0 auto;
 }
@@ -168,15 +168,17 @@ nav ul li a:hover {
 nav ul li.active {
     font-weight: 700;
     text-shadow: 0 0 20px #00000042;
-    border-bottom: #000 1px solid;
+    border-bottom: #ffffff 1px solid;
 }
 
+
+main{
+    background-color: #F9C784;}
 /*=======================Login.html=========================*/
 
 #mainLogin {
     display: flex;
-    
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -186,16 +188,21 @@ nav ul li.active {
 }
 
 #mainLogin aside {
-    border-radius: 20px 50% 50% 20px;
-    background-color: blue;
+    background-color: #626fa7;
     width: 50%;
-    display: flex;
+    min-height: 480px;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 50px 45px 0px;
     gap: 15px;
 }
+
+#mainLogin.registroA{flex-direction: row-reverse;}
+
+#mainLogin aside#login {border-radius: 0px 40% 40% 0px;}
+#mainLogin aside#register {border-radius: 40% 0 0 40%;}
+
 
 #mainLogin aside h1,
 #mainLogin aside .mensaje span {
@@ -210,8 +217,7 @@ nav ul li.active {
 }
 
 #mainLogin aside .mensaje{
-    border: solid 1px;
-    padding: 5px 10px;
+    padding: 5px 10px 40px;
     font-size: 0.9rem;
     width: 70%;
 }
@@ -225,16 +231,23 @@ nav ul li.active {
     flex: 1;
     position: relative;
     display: none;
+    flex-direction: column;
 }
 
 #mainLogin section img {
     position: absolute;
-    border: solid 1px;
-    width: 4.567vw;
-    height: 4.567vw;
+    width: 100px;
+    height: 100px;
     right: 0;
     top: 0;
 }
+
+
+#mainLogin.registroA section{
+    align-items: end;
+}
+#mainLogin.registroA section img{left: 0;}
+
 
 #mainLogin section span,
 #mainLogin section h1,
@@ -243,11 +256,20 @@ nav ul li.active {
     margin: 0 0 0 40px;
 }
 
+#mainLogin.registroA section span,
+#mainLogin.registroA section h1,
+#mainLogin.registroA section .form {
+    width: 480px;
+    margin: 0 40px 0 0px;
+}
+
 #mainLogin section span {
     display: block;
     margin: 10px 0 25px;
 }
-
+#mainLogin section span a{
+    cursor: pointer;
+}
 #mainLogin section h1{
     font-size: 2.6rem;
 }
@@ -275,9 +297,10 @@ nav ul li.active {
     cursor: pointer;
 }
 
-#mainLogin section.active{
-    display: block;
-}
+
+#mainLogin aside.active{display: flex;}
+#mainLogin section.active{display: flex;}
+
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 
@@ -292,42 +315,48 @@ nav ul li.active {
 }
 
 #mainInicio .catalogo {
-    padding: 20px 30px;
+    padding: 50px 30px 30px;
     margin: 0 auto;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: start;
-    gap: 5%;
+    gap: 10px
 }
 
 #mainInicio .catalogo .categorias {
+    flex: 1;
+    min-width: 170px;
+    max-width: 600px;
+    width: max-content;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    transition: 0.5s ease;
-    cursor: pointer;
-    position: relative;
+
 }
 #mainInicio .catalogo .categorias:hover{
-    transform: scaleX(1.2);
+    flex-grow: 1.2;
+    min-width: 290px;
 }
+
 
 #mainInicio .catalogo .categorias img {
     display: block;
-    width: 90%;
-    height: 300px;
-  }
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    border: solid 1px;
+    object-fit: cover;
+}
+
 
 #mainInicio .catalogo .categorias a {
     width: max-content;
     margin: 0 auto;
     font-size: 1.5rem;
     cursor: pointer;
-    position: absolute;
-    bottom: 0%;
-    
     font-weight: 600;
 }
 
@@ -533,18 +562,21 @@ nav ul li.active {
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 
-/*=======================.html=========================*/
+/*=======================Pedidos.html=========================*/
 
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
-
 .contenido-principal {
     border: 2px solid;
-    margin: 20px 70px;
-    padding: 35px;
+    padding: 35px 70px;
     display: flex;
     flex-wrap: wrap;
     
 }
+
+.subtitulo {
+    margin: 35px 0 15px 0;
+}
+
 
 .contenedor-carrito {
     height: 10rem;
@@ -620,9 +652,6 @@ nav ul li.active {
 
 }
 
-.subtitulo {
-    margin: 35px 0 15px 0;
-}
 
 .contenido-historial {
     width: 100%;
@@ -667,13 +696,40 @@ nav ul li.active {
 /*------------------------Diseño Responsive-------------------------*/
     @media (max-width: 1610px){
     }
-    @media (max-width:1279px){
+    @media (max-width:900px){
                 
       /*========================Inicio.html========================*/
-        #mainInicio .catalogo{             
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
+      
+        #mainInicio .catalogo {
+            gap: 5px
+        }
+
+        #mainInicio .catalogo .categorias {
+            flex: 1;
+            min-width: 170px;
+            max-width: 600px;
+            width: max-content;
+            position: relative;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        #mainInicio .catalogo .categorias:hover{
+            flex-grow: 1.2;
+            min-width: 290px;
+        }
+
+
+        #mainInicio .catalogo .categorias img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+            border: solid 1px;
+            object-fit: cover;
         }
         
 
@@ -720,20 +776,12 @@ nav ul li.active {
             font-size: clamp(12px, 1vw + 0.8rem, 18px);}
 
         
-    #mainInicio .catalogo .categorias a {
-            position: absolute;
-            bottom: 0%;
-        }
-            
+         
         /*========================Inicio.html========================*/
         
         #mainInicio .catalogo{
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, max-content);
-            row-gap: 20px;
         }
         #mainInicio .catalogo .categorias{
-            max-height: 300px;
         }
 
         #mainInicio .catalogo .categorias:hover{
