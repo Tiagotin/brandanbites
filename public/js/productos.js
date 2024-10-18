@@ -8,6 +8,7 @@ let totalPaginas = 0;
 let categoriaActual = 'comidas'; // Valor inicial
 
 
+
 // Definición de productos por categoría
 const productosComidas = [
     { titulo: 'Sebino1', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
