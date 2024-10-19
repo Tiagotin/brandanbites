@@ -1,17 +1,20 @@
-
 @font-face {
     font-family: 'Quicksand';
     src: url('../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
     src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
+
 @font-face {
     font-family: 'League_Spartan';
     src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --font-system: Quicksand;
+    --font-system: League_Spartan;
 }
 
 html,
@@ -29,10 +32,6 @@ body {
 }
 
 body {
-    /* 
-    background: #FFEFBA;
-    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA);  */
     background-color: #fff;
     padding: 0px 0px;
     font-family: var(--font-system);
@@ -59,7 +58,7 @@ header {
     flex-wrap: wrap;
 }
 
-header img{
+header img {
     margin-left: 4%;
     width: 70px;
 }
@@ -87,13 +86,15 @@ header .buscador i {
     align-items: center;
 
 }
-header .buscador input{
+
+header .buscador input {
     font-size: clamp(12px, 1vw + 0.5rem, 18px);
     border: none;
     border-radius: 8px;
     color: #292929;
     background-color: transparent;
-    flex: 1; max-width: 95%;
+    flex: 1;
+    max-width: 95%;
 }
 
 header .buscador input:focus {
@@ -119,6 +120,7 @@ header .buscador input:focus {
     padding: 5px;
     font-size: clamp(14px, 2vw + 1rem, 18px);
 }
+
 /*Iniciar Sesion*/
 .botones a:nth-child(1) {
     border-radius: 5px;
@@ -127,6 +129,7 @@ header .buscador input:focus {
     font-weight: 600;
     box-shadow: 0 5px 20px #0000004d;
 }
+
 nav {
     width: 100%;
     padding: 15px;
@@ -173,8 +176,10 @@ nav ul li.active {
 }
 
 
-main{
-    background-color: #F9C784;}
+main {
+    background-color: #F9C784;
+}
+
 /*=======================Login.html=========================*/
 
 #mainLogin {
@@ -199,10 +204,17 @@ main{
     gap: 15px;
 }
 
-#mainLogin.registroA{flex-direction: row-reverse;}
+#mainLogin.registroA {
+    flex-direction: row-reverse;
+}
 
-#mainLogin aside#login {border-radius: 0px 40% 40% 0px;}
-#mainLogin aside#register {border-radius: 40% 0 0 40%;}
+#mainLogin aside#login {
+    border-radius: 0px 40% 40% 0px;
+}
+
+#mainLogin aside#register {
+    border-radius: 40% 0 0 40%;
+}
 
 
 #mainLogin aside h1,
@@ -212,21 +224,22 @@ main{
     color: #fff;
 }
 
-#mainLogin h1{
+#mainLogin h1 {
     font-size: 2rem;
     text-align: center;
 }
 
-#mainLogin aside .mensaje{
+#mainLogin aside .mensaje {
     padding: 5px 10px 40px;
     font-size: 0.9rem;
     width: 70%;
 }
 
-#mainLogin aside .mensaje span{
+#mainLogin aside .mensaje span {
     font-size: clamp(14px, 0.9vw + 0.35rem, 32px);
     text-align: center;
 }
+
 #mainLogin section {
     margin: 50px 0px;
     flex: 1;
@@ -244,10 +257,13 @@ main{
 }
 
 
-#mainLogin.registroA section{
+#mainLogin.registroA section {
     align-items: end;
 }
-#mainLogin.registroA section img{left: 0;}
+
+#mainLogin.registroA section img {
+    left: 0;
+}
 
 
 #mainLogin section span,
@@ -268,10 +284,12 @@ main{
     display: block;
     margin: 10px 0 25px;
 }
-#mainLogin section span a{
+
+#mainLogin section span a {
     cursor: pointer;
 }
-#mainLogin section h1{
+
+#mainLogin section h1 {
     font-size: 2.6rem;
 }
 
@@ -299,8 +317,13 @@ main{
 }
 
 
-#mainLogin aside.active{display: flex;}
-#mainLogin section.active{display: flex;}
+#mainLogin aside.active {
+    display: flex;
+}
+
+#mainLogin section.active {
+    display: flex;
+}
 
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
@@ -331,13 +354,15 @@ main{
     width: max-content;
     position: relative;
     transition: 0.2s ease-in-out;
-    cursor: pointer;;
+    cursor: pointer;
+    ;
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
-#mainInicio .catalogo .categorias:hover{
+
+#mainInicio .catalogo .categorias:hover {
     flex-grow: 1.2;
     min-width: 290px;
 }
@@ -390,6 +415,7 @@ main{
 }
 
 #mainCatalogo aside {
+
     >h1,
     a {
         color: #000 !important;
@@ -486,7 +512,7 @@ main{
     justify-content: end;
 }
 
-#mainCatalogo section .categorias .cards .extra button{
+#mainCatalogo section .categorias .cards .extra button {
     border: none;
     padding: 5px 10px;
     border-radius: 15px;
@@ -518,6 +544,7 @@ main{
 #mainInfo {
     display: flex;
     flex: 1;
+    justify-content: space-between;
     width: 100%;
     margin: 0 auto;
     gap: 25px;
@@ -527,35 +554,34 @@ main{
 #mainInfo section {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    font-size: 1.5rem;
+    
 }
 
-#mainInfo #horario {
-    width: 60%;
-}
+#mainInfo #horario,
+#mainInfo #info{
+    width: 46%;
 
-#mainInfo #info {
-    flex: 1;
 }
-
 
 #mainInfo #horario .calendario,
 #mainInfo #info .mensaje {
-    border: solid 1px;
     flex: 1;
     padding: 40px;
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    background-color: var(--color2);
+    border-radius: 0px 0px 15px 15px;
 
     >p {
         margin: 0 auto;
     }
 }
-
+.horario-encabezado{
+    background-color: var(--color4);
+    padding: 25px;
+    border-radius: 15px 15px 0px 0px;
+}
 #mainInfo #info .mensaje {
-    border: solid 1px;
     flex: 1;
 }
 
@@ -566,12 +592,19 @@ main{
 /*=======================Pedidos.html=========================*/
 
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+:root {
+    --color1: #4E598C;
+    --color2: #FFFFFF;
+    --color3: #F9C784;
+    --color4: #FCAF58;
+    --color5: #FF8C42;
+}
+
 .contenido-principal {
-    border: 2px solid;
     padding: 35px 70px;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
 .subtitulo {
@@ -580,31 +613,30 @@ main{
 
 
 .contenedor-carrito {
+    border-radius: 15px;
     height: 10rem;
     display: flex;
     width: 100%;
-
 }
 
 .contenido-carrito-1 {
-    border: 2px solid;
-    border-right: 1px solid;
-    text-align: center;
     width: 13rem;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color4);
+    border-radius: 15px 0 0 15px;
 }
 
 .contenido-carrito-2 {
-    border: 2px solid;
-    border-left: 1px solid;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--color2);
+    border-radius: 0 15px 15px 0;
 }
 
 .contenido-carrito-2A {
@@ -622,7 +654,7 @@ main{
 
 .contenido-carrito-desplegable {
     margin: 15px;
-    padding: 3px;
+    padding: 15px;
 }
 
 .contenido-carrito-2B {
@@ -643,14 +675,15 @@ main{
 }
 
 .transition-boton {
-    border: 2px solid;
+    background-color: var(--color4);
+    text-align: center;
 }
 
 .transition-boton:hover {
-    background-color: #FF8C42;
-    font-size: larger;
+    background-color: var(--color5);
     transition: 0.4s;
 
+    color: var(--color2);
 }
 
 
@@ -664,9 +697,10 @@ main{
 }
 
 .contenido-historial-carta {
+    border-radius: 15px;
     margin-right: 35px;
-    border: 2px solid;
     padding: 35px 15px;
+    background-color: var(--color2);
 }
 
 .historial-lista {
@@ -695,113 +729,125 @@ main{
 
 /*------------------------------------------------------------------*/
 /*------------------------Diseño Responsive-------------------------*/
-    @media (max-width: 1610px){
+@media (max-width: 1610px) {}
+
+@media (max-width:900px) {
+
+    /*========================Inicio.html========================*/
+
+    #mainInicio .catalogo {
+        gap: 5px
     }
-    @media (max-width:900px){
-                
-      /*========================Inicio.html========================*/
-      
-        #mainInicio .catalogo {
-            gap: 5px
-        }
 
-        #mainInicio .catalogo .categorias {
-            flex: 1;
-            min-width: 170px;
-            max-width: 600px;
-            width: max-content;
-            position: relative;
-            transition: 0.2s ease-in-out;
-            cursor: pointer;;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    #mainInicio .catalogo .categorias {
+        flex: 1;
+        min-width: 170px;
+        max-width: 600px;
+        width: max-content;
+        position: relative;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        }
-        #mainInicio .catalogo .categorias:hover{
-            flex-grow: 1.2;
-            min-width: 290px;
-        }
+    }
+
+    #mainInicio .catalogo .categorias:hover {
+        flex-grow: 1.2;
+        min-width: 290px;
+    }
 
 
-        #mainInicio .catalogo .categorias img {
-            display: block;
-            width: 100%;
-            height: 350px;
-            border-radius: 20px;
-            border: solid 1px;
-            object-fit: cover;
-        }
-        
+    #mainInicio .catalogo .categorias img {
+        display: block;
+        width: 100%;
+        height: 350px;
+        border-radius: 20px;
+        border: solid 1px;
+        object-fit: cover;
+    }
 
-      /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
-    }/*
+
+    /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+}
+
+/*
     @media (max-width: 920px){header .buscador input{width: 370px;}}*/
 
-    @media (max-width:769px){
-        header .botones{
-            min-width: 100%;
-            justify-content: space-between;
-        }
-
-        header .botones a {
-            text-decoration: none;
-            color: #000;
-            background-color: #FF8C42;
-            padding: 5px;
-            font-size: clamp(14px, 2vw + 1rem, 18px);
-        }
-
-        #mainCatalogo section .categorias.active .productos{
-            border: solid 4px green;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(180px, 1fr));    
-            gap: 20px;
-            justify-content: center;
-        }
-        #mainCatalogo section .categorias .cards {
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #mainCatalogo section .categorias .cards img{
-            width: 100%;
-        }
-        header .buscador{
-            flex: 1; max-width: 70%; padding: 10px;
-        }
-        header .buscador input{
-            font-size: clamp(12px, 1vw + 0.8rem, 18px);}
-
-        
-         
-        /*========================Inicio.html========================*/
-        
-        #mainInicio .catalogo{
-        }
-        #mainInicio .catalogo .categorias{
-        }
-
-        #mainInicio .catalogo .categorias:hover{
-            transform: scale(1);
-        }
-        /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
-        
+@media (max-width:769px) {
+    header .botones {
+        min-width: 100%;
+        justify-content: space-between;
     }
 
-    @media (max-width:551px){
-
-        /*========================Inicio.html========================*/
-            
-        #mainInicio .catalogo .categorias{
-            max-height: 200px;
-        }
-        /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
-        
+    header .botones a {
+        text-decoration: none;
+        color: #000;
+        background-color: #FF8C42;
+        padding: 5px;
+        font-size: clamp(14px, 2vw + 1rem, 18px);
     }
+
+    #mainCatalogo section .categorias.active .productos {
+        border: solid 4px green;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #mainCatalogo section .categorias .cards {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mainCatalogo section .categorias .cards img {
+        width: 100%;
+    }
+
+    header .buscador {
+        flex: 1;
+        max-width: 70%;
+        padding: 10px;
+    }
+
+    header .buscador input {
+        font-size: clamp(12px, 1vw + 0.8rem, 18px);
+    }
+
+
+
+    /*========================Inicio.html========================*/
+
+    #mainInicio .catalogo {}
+
+    #mainInicio .catalogo .categorias {}
+
+    #mainInicio .catalogo .categorias:hover {
+        transform: scale(1);
+    }
+
+    /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
+}
+
+@media (max-width:551px) {
+
+    /*========================Inicio.html========================*/
+
+    #mainInicio .catalogo .categorias {
+        max-height: 200px;
+    }
+
+    /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
+
+}
+
 /*------------------------------------------------------------------*/
 /*------------------------------------------------------------------*/
 .contenido-horarios-detalle {
