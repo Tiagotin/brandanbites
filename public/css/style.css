@@ -190,6 +190,8 @@ main {
     display: flex;
     width: 100%;
     margin: 0 auto;
+    height: 100%;
+    padding: 10px 0;
 }
 
 #mainLogin aside,
@@ -201,6 +203,7 @@ main {
     background-color: var(--color1);
     width: 50%;
     min-height: 480px;
+    max-height: 800px;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -256,7 +259,7 @@ main {
     position: absolute;
     width: 100px;
     height: 100px;
-    right: 0;
+    right: 5%;
     top: 0;
 }
 
@@ -266,21 +269,21 @@ main {
 }
 
 #mainLogin.registroA section img {
-    left: 0;
+    left: 5%;
 }
 
 
 #mainLogin section span,
 #mainLogin section h1,
 #mainLogin section .form {
-    width: 480px;
+    width: 70%;
     margin: 0 0 0 40px;
 }
 
 #mainLogin.registroA section span,
 #mainLogin.registroA section h1,
 #mainLogin.registroA section .form {
-    width: 480px;
+    width: 70%;
     margin: 0 40px 0 0px;
 }
 
@@ -821,10 +824,6 @@ main {
 
 
     /*========================Inicio.html========================*/
-
-    #mainInicio .catalogo {}
-
-    #mainInicio .catalogo .categorias {}
 
     #mainInicio .catalogo .categorias:hover {
         transform: scale(1);
