@@ -1,5 +1,5 @@
-const categorias = document.querySelectorAll('.categorias');
 
+const categorias = document.querySelectorAll('.categorias');
 // Escuchar el clic en cada .categorias
 categorias.forEach(categoria => {
     categoria.addEventListener('click', (e) => {

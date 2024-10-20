@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosco</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <img src="../../img/logo 2.png" alt="Logo">
+        <h1></h1>
+        <div class="buscador">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="Buscar">
+        </div>
+        <div class="botones">
+            <a id="adminBtn">Brandan<i class="fas fa-user-tie"></i></a>
+            <!--<a id="adminBtn"><i class="fas fa-user-tie"></i></a>-->
+
+            <div class="desplegableUser">
+                <h2>Administrador</h2>
+                <a href="../gestion/productos.html">Modificar</a>
+                <a>Cerrar Sesion</a>
+            </div>
+            <a href="../pedidos/pedidos.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <nav id="gestion">
+        <ul>
+            <li>
+                <a href="../inicio/inicio.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </li>
+            <li>
+                <a href="../gestion/productos.html">Gestionar Productos</a>
+            </li>
+            <li>
+                <a href="../gestion/pedidos.html">Pedidos</a>
+            </li>
+            <li>
+                <a href="../gestion/estadisticas.html">Estadisticas</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="mainProductosG">
+        
+        <section class="productos">
+                <h1>Categorias</h1>
+                <h2>Comidas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>descripcion</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamburguesa</td>
+                            <td>Completa</td>
+                            <td>1500$</td>
+                            <td>c/u</td>
+                        </tr><!--
+                        <tr>
+                            <td>Pebete</td>
+                            <td>-</td>
+                            <td>1000$</td>
+                            <td>c/u</td>-->
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Bebidas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Manaos</td>
+                            <td>De Cola lorem50</td>
+                            <td>900$</td>
+                            <td>c/u</td>
+                        </tr><!--
+                        <tr>
+                            <td>Placer</td>
+                            <td>de Naranja</td>
+                            <td>500$</td>
+                            <td>c/u</td>
+                        </tr>
+                        <tr>
+                            <td>Manaos</td>
+                            <td>De Cola</td>
+                            <td>900$</td>
+                            <td>c/u</td>
+                        </tr>
+                        <tr>
+                            <td>Placer</td>
+                            <td>de Naranja</td>
+                            <td>500$</td>
+                            <td>c/u</td>
+                        </tr>
+                        <tr>
+                            <td>Manaos</td>
+                            <td>De Cola</td>
+                            <td>900$</td>
+                            <td>c/u</td>
+                        </tr>
+                        <tr>
+                            <td>Placer</td>
+                            <td>de Naranja</td>
+                            <td>500$</td>
+                            <td>c/u</td>-->
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Dulces</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caramelo</td>
+                            <td>marca tal</td>
+                            <td>50$</td>
+                            <td>3x</td>
+                        </tr><!--
+                        <tr>
+                            <td>Caramelo</td>
+                            <td>marca tal</td>
+                            <td>100$</td>
+                            <td>3x</td>
+                        </tr>-->
+                    </tbody>
+                </table>
+                <h2>Snacks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Don Satur</td>
+                            <td>Dulces</td>
+                            <td>1000$</td>
+                            <td>c/u</td>
+                        </tr><!--
+                        <tr>
+                            <td>Don Satur</td>
+                            <td>Agridulces</td>
+                            <td>1000$</td>
+                            <td>c/u</td>
+                        </tr>-->
+                    </tbody>
+                </table>
+        </section>
+        
+        <aside>
+            <div class="img-container">
+                <span>Imagen</span>
+            </div>
+            <h2>Nombre</h2>
+            <h2>Descripcion</h2>
+            <h2>Precio</h2>
+            <h2>Cantidad</h2>
+        </aside>
+
+    </main>
+    <script src="../../js/inicio.js"></script>
+    <script src="../../js/nav.js"></script>
+</body>
