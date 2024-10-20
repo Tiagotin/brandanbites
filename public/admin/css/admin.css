@@ -84,14 +84,17 @@
 #mainProductosG .productos::-webkit-scrollbar-thumb:hover {background-color: #555;}
 
 
+#mainProductosG .productos{
+    display: flex;
+    flex-direction: column;
+}
 #mainProductosG .productos h1{
     font-size: 2.8rem;
     margin-bottom: 20px;
 }
-#mainProductosG table {
+#mainProductosG .productos table {
     border-collapse: collapse; /* Une los bordes de las celdas para un solo borde */
-    border: 1px solid #000;
-    width: 100%;
+    flex: 1;
     margin-bottom: 30px;
 }
 
@@ -104,17 +107,43 @@
 
 #mainProductosG table th{font-size: 1.35rem;}
 #mainProductosG table td{font-size: 1.25rem;}
+
 /*Nombre del Producto*/
 #mainProductosG  table td:nth-child(1),#mainProductosG  table td:nth-child(1){
     min-width: 220px;
     width: 0;
 }
-/*Precio y Cantiad*/
+/*Precio y Cantidad*/
 #mainProductosG  table td:nth-child(3),#mainProductosG  table td:nth-child(4),
 #mainProductosG  table th:nth-child(3),#mainProductosG  table th:nth-child(4){
     min-width: 130px;
     width: 0;
 }
+
+/*Modificar*/
+
+#mainProductosG  table #colModificar, 
+#mainProductosG  table #btnModificar{
+    background-color: transparent;
+    border: none;
+    width: 0px;
+    padding: 0 5px;
+
+}
+
+#mainProductosG  table #btnModificar button{
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+#mainProductosG  table #btnModificar button i{
+    color: #fff; 
+    font-size: 1.35rem; 
+    cursor: pointer; 
+    transition: 0.2s ease-in 20ms}
+#mainProductosG  table #btnModificar button i:hover{color: #eeeeee;}
 
 #mainProductosG aside{
     padding: 20px 5%;
@@ -128,13 +157,32 @@
     width: 100%;
     min-width: 200px;
     min-height: 300px;
-    border: solid 1px #424242;
-    background-color: #b5b5b5;
+    border: 2px solid #424242;
+    background-color: #d1d1d1;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     transition: 0.2s ease 0.05s;
 }
-#mainProductosG aside .img-container:hover{background-color: #979797;}
+#mainProductosG aside .img-container:hover{background-color: #b8b8b8;}
 #mainProductosG aside .img-container span{color: #fff;}
+
+#mainProductosG aside ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#mainProductosG aside ul li{
+    display: flex;
+    gap: 5px;
+}
+
+#mainProductosG aside ul li h2{font-size: clamp(16px, 1vw, 24px);}
+#mainProductosG aside ul li input{
+    width: 100%;
+    padding: 2px;
+    font-size: 1.15rem;
+}
