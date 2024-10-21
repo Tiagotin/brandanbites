@@ -275,13 +275,21 @@ body{display: flex; flex-direction: column;}
 #mainPedidosG aside ul button{
     background-color: transparent;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
     color: #2E0014;
     font-weight: 500;
     font-size: 1.35rem;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
     
 }
 
+#mainPedidosG aside ul button:hover {
+    background-color: #754c00;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 #mainPedidosG section{
     flex: 1;
     padding: 10px;
@@ -294,14 +302,21 @@ body{display: flex; flex-direction: column;}
 }
 
 #mainPedidosG section .pedidosCard{
-    border: solid 1px;
+    border: solid 1px #ddd;
     min-width: 200px;
     min-height: 200px;
     max-height: 300px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
+#mainPedidosG section .pedidosCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 #mainPedidosG section .pedidosCard li{font-size: 1.2rem; font-weight: 600;}
 #mainPedidosG section .pedidosCard.retirado{background-color: #F41915;}
 #mainPedidosG section .pedidosCard.retiradoN{background-color: #86B455;}

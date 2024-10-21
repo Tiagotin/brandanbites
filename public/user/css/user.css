@@ -1,0 +1,60 @@
+*::-webkit-scrollbar {width: 4px; background-color: --color1}
+*::-webkit-scrollbar-thumb {background-color: #888;border-radius: 10px;}
+*::-webkit-scrollbar-thumb:hover {background-color: #555;}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{display: flex; flex-direction: column;}
+/*=================================Header=================================*/
+
+
+.botones{
+    position: relative;
+}
+.botones a{
+    display: flex;
+    align-items: center;
+    z-index: 500;
+}
+#adminBtn{
+    font-size: clamp(14px, 0.6rem + 2vw, 24px);
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.desplegableUser{ 
+    position: absolute;
+    top: 60%;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    z-index: 40;
+    transition: 0.1s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.2s ease, opacity 0.2s linear, visibility 0.2s ease;
+}
+
+.desplegableUser.active {
+    top: 100%; /* El menú se desliza a 40% cuando aparece */
+    opacity: 1;
+    visibility: visible;
+}
+.desplegableUser h1{
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.desplegableUser a{
+    width: max-content;
+    color: #000;
+    cursor: pointer;
+    background-color: transparent;
+}

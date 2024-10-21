@@ -130,7 +130,6 @@ header .buscador input:focus {
     font-size: 1.3rem;
     color: var(--color2);
     font-weight: 600;
-    box-shadow: 0 5px 20px #0000004d;
 }
 
 nav {
