@@ -12,7 +12,7 @@ async function insertUsers() {
       {
         nombre: 'Santino Moraes',
         email: '47216695@insi.edu.ar',
-        password: 'esmg1234',
+        password: 'aguantetalleres',
         telefono: '11 3379-3285',
         rol: 'admin', // Asignar rol de administrador
       },
@@ -21,7 +21,7 @@ async function insertUsers() {
         email: '46557799@insi.edu.ar',
         password: 'Septimo7v',
         telefono: '11 7894-5612',
-        rol: 'usuario', // Asignar rol de usuario normal
+        rol: 'admin', // Asignar rol de usuario normal
       },
     ];
 
