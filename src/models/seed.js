@@ -10,7 +10,7 @@ async function insertUsers() {
 
     const users = [
       {
-        nombre: 'Santino Moraes',
+        nombre: 'Eitan Santino Moraes',
         email: '47216695@insi.edu.ar',
         password: 'De7330de',
         telefono: '11 3379-3285',
