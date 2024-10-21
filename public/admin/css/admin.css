@@ -1,5 +1,17 @@
 
+*::-webkit-scrollbar {width: 4px; background-color: --color1}
+*::-webkit-scrollbar-thumb {background-color: #888;border-radius: 10px;}
+*::-webkit-scrollbar-thumb:hover {background-color: #555;}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{display: flex; flex-direction: column;}
 /*=================================Header=================================*/
+
 
 .botones{
     position: relative;
@@ -61,6 +73,8 @@
 #gestion a i{color: #fff;}
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
+/*==============================Gestion de Productos===============================*/
+
 #mainProductosG{
     display: flex;
     width: 100%;
@@ -78,10 +92,6 @@
     min-width: 59%;
     padding-right: 10px;
 }
-
-#mainProductosG .productos::-webkit-scrollbar {width: 4px;}
-#mainProductosG .productos::-webkit-scrollbar-thumb {background-color: #888;border-radius: 10px;}
-#mainProductosG .productos::-webkit-scrollbar-thumb:hover {background-color: #555;}
 
 
 #mainProductosG .productos{
@@ -109,41 +119,46 @@
 #mainProductosG table td{font-size: 1.25rem;}
 
 /*Nombre del Producto*/
-#mainProductosG  table td:nth-child(1),#mainProductosG  table td:nth-child(1){
+#mainProductosG table td:nth-child(1),#mainProductosG  table td:nth-child(1){
     min-width: 220px;
     width: 0;
 }
 /*Precio y Cantidad*/
-#mainProductosG  table td:nth-child(3),#mainProductosG  table td:nth-child(4),
-#mainProductosG  table th:nth-child(3),#mainProductosG  table th:nth-child(4){
+#mainProductosG table td:nth-child(3),#mainProductosG  table td:nth-child(4),
+#mainProductosG table th:nth-child(3),#mainProductosG  table th:nth-child(4){
     min-width: 130px;
     width: 0;
 }
 
 /*Modificar*/
 
-#mainProductosG  table #colModificar, 
-#mainProductosG  table #btnModificar{
+#mainProductosG table #colModificar, 
+#mainProductosG table #btnModificar{
     background-color: transparent;
     border: none;
     width: 0px;
     padding: 0 5px;
-
 }
 
-#mainProductosG  table #btnModificar button{
+#mainProductosG table #btnModificar button{
     padding: 5px 10px;
     border: none;
     background-color: transparent;
     padding: 0;
 }
 
-#mainProductosG  table #btnModificar button i{
-    color: #fff; 
+#mainProductosG table #btnModificar button i{
+    color: #545454; 
     font-size: 1.35rem; 
     cursor: pointer; 
     transition: 0.2s ease-in 20ms}
-#mainProductosG  table #btnModificar button i:hover{color: #eeeeee;}
+
+#mainProductosG table #btnModificar button i:hover{color: #898989;}
+
+#mainProductosG table tbody tr             #btnModificar {opacity: 0; visibility: 0; transition: opacity 0.15s ease 0s, visibility 0s 0.15s;}
+#mainProductosG table tbody tr:hover       #btnModificar {opacity: 1; visibility: 1; transition: opacity 0.3s ease 0s, visibility 0s 0s;}
+#mainProductosG table tbody tr:not(:hover) #btnModificar {                           transition: opacity 0.25s ease 0.5s, visibility 0s 0.8s}
+
 
 #mainProductosG aside{
     padding: 20px 5%;
@@ -186,3 +201,217 @@
     padding: 2px;
     font-size: 1.15rem;
 }
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+
+/*==============================Gestion de Pedidos===============================*/
+
+#mainPedidosG{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 15px 10px;
+    gap: 40px;
+    flex: 1;
+    overflow: scroll;
+}
+#mainPedidosG aside, 
+#mainPedidosG section{
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+#mainPedidosG aside{
+    min-width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: #ffbb6e;
+}
+#mainPedidosG aside .searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+#mainPedidosG aside .searchContainer input:focus{outline: none;}
+#mainPedidosG aside .searchContainer input {
+    flex: 1;
+    border-radius: 25px;
+    padding: 8px 10px 4px 30px;
+    font-size: 1.2rem;
+    border: none;
+    z-index: 150;
+}
+
+#mainPedidosG aside .searchContainer i {
+    position: absolute;
+    pointer-events: none;
+    z-index: 300;
+    left: 10px;
+}
+
+#mainPedidosG aside .searchContainer button{
+    padding: 2px 5px;
+    font-size: 1.1rem;
+    border: solid 1px #ffffff9c;
+    background-color: #ffffff1c;
+    color: #754c00;
+    cursor: pointer;    
+}
+
+#mainPedidosG aside ul{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#mainPedidosG aside ul button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #2E0014;
+    font-weight: 500;
+    font-size: 1.35rem;
+    
+}
+
+#mainPedidosG section{
+    flex: 1;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 10px;
+    justify-content: space-around;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#mainPedidosG section .pedidosCard{
+    border: solid 1px;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+#mainPedidosG section .pedidosCard li{font-size: 1.2rem; font-weight: 600;}
+#mainPedidosG section .pedidosCard.retirado{background-color: #F41915;}
+#mainPedidosG section .pedidosCard.retiradoN{background-color: #86B455;}
+#mainPedidosG section .pedidosCard.retirado ul li{color: #F1E3D3;}
+#mainPedidosG section .pedidosCard.retiradoN ul li{color: #fff;}
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+
+/*=============================Gestion de Estadisticas===============================*/
+
+
+
+
+#mainEstadisticas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+#mainEstadisticas .estadisticas{
+    max-height: 500px;
+    width: 83%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20px;
+    border: solid 2px #bebebe;
+    background-color: #e8e8e8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#mainEstadisticas .estadisticas h1{font-size: 1.7rem;}
+#mainEstadisticas .estadisticas .resumen, 
+#mainEstadisticas .estadisticas .topProductos,
+#mainEstadisticas .estadisticas .graficos{
+    margin: 10px 15px 20px;
+}
+
+#mainEstadisticas .estadisticas .resumen ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#mainEstadisticas .estadisticas .resumen ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#mainEstadisticas .estadisticas .resumen ul li span{font-size: 1.4rem;}
+
+#mainEstadisticas .estadisticas .resumen ul li .tituloCircle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid #fff 10px;
+    position: relative;
+    padding: 20px;
+}
+
+#mainEstadisticas .estadisticas .resumen ul li .tituloCircle:before{
+    content: "";
+    position: absolute;
+    top: -10px;  
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: inset(50% 0 0 0);
+}
+
+#mainEstadisticas .estadisticas .resumen ul li:nth-child(1) .tituloCircle:before {border: solid #5D6D7E  10px; transform: rotate(30deg);}
+#mainEstadisticas .estadisticas .resumen ul li:nth-child(2) .tituloCircle:before {border: solid #C0392B  10px; transform: rotate(310deg);}
+#mainEstadisticas .estadisticas .resumen ul li:nth-child(3) .tituloCircle:before {border: solid #28B463  10px; transform: rotate(240deg);}
+
+#mainEstadisticas .estadisticas .resumen ul li .tituloCircle span{
+    color: #000;
+    font-weight: 900;
+    width: max-content;
+    font-size: 1.7rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#mainEstadisticas .estadisticas .topProductos ul{
+    display: flex;
+    gap: 20px;
+}
+#mainEstadisticas .estadisticas .topProductos ul li{
+    flex: 1;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+#mainEstadisticas .estadisticas .graficos{
+    background-color: #fff;
+    border-radius: 12px;
+    min-height: 400px;
+}
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
