@@ -39,7 +39,7 @@ Category.init({
   timestamps: true,
 });
 
-// Relación con el modelo Product (si es que existe)
+// Relación con el modelo Product
 Category.associate = (models) => {
   Category.hasMany(models.Product, {
     foreignKey: 'id_categoria',

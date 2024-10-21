@@ -55,4 +55,12 @@ Product.init({
   timestamps: true, // Incluye createdAt y updatedAt
 });
 
+Product.associate = (models) => {
+  Product.belongsTo(models.Category, {
+    foreignKey: 'id_categoria',
+    as: 'categoria',
+  });
+};
+
+
 module.exports = Product;
