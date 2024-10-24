@@ -149,7 +149,6 @@ nav ul {
 nav ul li {
     cursor: pointer;
     position: relative;
-    font-size: clamp(14px, 0.9vw + 0.9rem, 32px);
 }
 
 nav ul li a::before {
@@ -163,8 +162,9 @@ nav ul li a::before {
 
 nav ul li a {
     border-bottom: solid 1px transparent;
-    transition: 0.1s ease-in;
+    transition:border  0.1s ease-in;
     color: var(--color2);
+    font-size: clamp(8px, 0.8rem + 0.8vw, 32px);
 }
 
 nav ul li a:hover {
@@ -370,14 +370,14 @@ main {
 
 #mainInicio .catalogo .categorias:hover {
     flex-grow: 1.2;
-    min-width: 290px;
+    min-width: (200px, 25vw, 500px);
 }
 
 
 #mainInicio .catalogo .categorias img {
     display: block;
     width: 100%;
-    height: 350px;
+    height: clamp(150px, 25vw, 500px); /* 350px */
     border-radius: 20px;
     border: solid 1px;
     object-fit: cover;
@@ -729,53 +729,6 @@ main {
 
 /*------------------------------------------------------------------*/
 /*------------------------Diseño Responsive-------------------------*/
-@media (max-width: 1610px) {}
-
-@media (max-width:900px) {
-
-    /*========================Inicio.html========================*/
-
-    #mainInicio .catalogo {
-        gap: 5px
-    }
-
-    #mainInicio .catalogo .categorias {
-        flex: 1;
-        min-width: 170px;
-        max-width: 600px;
-        width: max-content;
-        position: relative;
-        transition: 0.2s ease-in-out;
-        cursor: pointer;
-        ;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    #mainInicio .catalogo .categorias:hover {
-        flex-grow: 1.2;
-        min-width: 290px;
-    }
-
-
-    #mainInicio .catalogo .categorias img {
-        display: block;
-        width: 100%;
-        height: 350px;
-        border-radius: 20px;
-        border: solid 1px;
-        object-fit: cover;
-    }
-
-
-    /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
-}
-
-/*
-    @media (max-width: 920px){header .buscador input{width: 370px;}}*/
-
 @media (max-width:769px) {
     header .botones {
         min-width: 100%;
@@ -822,24 +775,49 @@ main {
 
 
 
+
     /*========================Inicio.html========================*/
 
-    #mainInicio .catalogo .categorias:hover {
-        transform: scale(1);
+    #mainInicio .catalogo {
+        gap: 5px
     }
 
+    #mainInicio .catalogo{
+        display: grid;
+        grid-template-columns: repeat(2,minmax(180px, 1fr));
+        justify-items: center;
+        align-content: start;
+        row-gap: 20px;
+    }
+
+
+    #mainInicio .catalogo .categorias img{
+        height: clamp(190px, 35vw, 300px);
+    }
+    /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
     /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 }
 
-@media (max-width:551px) {
+@media (max-width:450px) {
 
     /*========================Inicio.html========================*/
 
-    #mainInicio .catalogo .categorias {
-        max-height: 200px;
+    #mainInicio .catalogo{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
+    #mainInicio .catalogo .categorias {
+        width: 100%;
+        display: flex;
+    }
+
+    #mainInicio .catalogo .categorias img{
+        width: 90%;
+        height: clamp(200px, 70vw, 300px);
+    }
     /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 }

@@ -386,13 +386,12 @@ body{display: flex; flex-direction: column;}
 
 #mainEstadisticas .estadisticas .resumen ul li .tituloCircle:before{
     content: "";
+    margin: -30px;
     position: absolute;
-    top: -10px;  
-    left: -10px;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    clip-path: inset(50% 0 0 0);
+    clip-path: inset(0 50% 0 0);
 }
 
 #mainEstadisticas .estadisticas .resumen ul li:nth-child(1) .tituloCircle:before {border: solid #5D6D7E  10px; transform: rotate(30deg);}
