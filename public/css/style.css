@@ -42,8 +42,6 @@ body {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    max-width: 2500px;
-    max-height: 1500px;
     margin: 0 auto;
 }
 
@@ -183,6 +181,12 @@ main {
     background-color: var(--color3);
 }
 
+
+main{
+    
+    max-width: 3000px;
+    max-height: 3000px;
+}
 /*=======================Login.html=========================*/
 
 #mainLogin {
@@ -502,27 +506,30 @@ main {
 #mainCatalogo section .categorias .cards h1 {
     grid-area: titulo;
     padding: 0 15px 5px;
+    font-size: clamp(12px, 1rem + 1vw, 24px);
 }
 
 #mainCatalogo section .categorias .cards span {
     grid-area: subtitulo;
     padding: 0 15px;
+    font-size: clamp(12px, 0.5rem + 1vw, 24px);
 }
 
 #mainCatalogo section .categorias .cards .extra {
     grid-area: extra;
-    margin: 0 15px;
-    padding: 10px;
+    padding: 10px 0;
     display: flex;
-    align-items: end;
-    justify-content: end;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    font-size: clamp(12px, 1.2rem + 1vw, 24px);
 }
 
 #mainCatalogo section .categorias .cards .extra button {
     border: none;
     padding: 5px 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: clamp(8px, 0.4rem + 1vw, 24px);
 }
 
 #mainCatalogo section .categorias .paginacion {
@@ -560,7 +567,6 @@ main {
 #mainInfo section {
     display: flex;
     flex-direction: column;
-    
 }
 
 #mainInfo #horario,
@@ -569,10 +575,10 @@ main {
 
 }
 
-#mainInfo #horario .calendario,
+#mainInfo #horario .horasAbierto,
 #mainInfo #info .mensaje {
     flex: 1;
-    padding: 40px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     background-color: var(--color2);
@@ -581,6 +587,13 @@ main {
     >p {
         margin: 0 auto;
     }
+}
+
+#mainInfo #horario .horasAbierto{
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 .horario-encabezado{
     background-color: var(--color4);

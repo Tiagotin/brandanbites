@@ -10,39 +10,36 @@ let categoriaActual = 'comidas'; // Valor inicial
 
 // Definición de productos por categoría
 let productosComidas = [
-    { titulo: 'Titulo', subtitulo: 'Subtitulo', img: '../../img/Sin título.png' },
-    { titulo: 'Pancho', subtitulo: 'Con Papas', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino3', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino4', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino5', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino6', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino7', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino8', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino9', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino10', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
+    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../img/Kiosco - Menú/hamburguesa.png', precio: 1000 },
+    { titulo: 'Pebete', subtitulo: 'único', img: '../../img/Kiosco - Menú/pebete.png', precio: 1000 },
+    { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: '../../img/Kiosco - Menú/sanguche.png', precio: 1000 }
     // Agrega más productos si es necesario
 ];
 
 let productosBebidas = [
-    { titulo: 'Coca-Cola', subtitulo: 'Refresco clásico', img: '../../img/Sin título.png' },
-    { titulo: 'Agua', subtitulo: 'Agua mineral', img: '../../img/Sin título.png' },
-    { titulo: 'Jugo', subtitulo: 'Jugo natural', img: '../../img/Sin título.png' },
+    { titulo: 'Coca-Cola', subtitulo: 'Original', img: '../../img/Kiosco - Menú/cocacolag.png', precio: 1000 },
+    { titulo: 'Jugo Baggio', subtitulo: 'Multifruta', img: '../../img/Kiosco - Menú/baggio.png', precio: 1000 },
+    { titulo: 'Villamanaos', subtitulo: 'Agua Mineral', img: '../../img/Kiosco - Menú/aguap.jpg', precio: 1000 }
     // Agrega más productos si es necesario
 ];
 
 let productosDulces = [
-    { titulo: 'Chocolate', subtitulo: 'Chocolate oscuro', img: '../../img/Sin título.png' },
-    { titulo: 'Galleta', subtitulo: 'Galleta de vainilla', img: '../../img/Sin título.png' },
-    { titulo: 'Dulce de leche', subtitulo: 'Delicioso dulce de leche', img: '../../img/productos/dulce de leche.png' },
+    { titulo: 'Turron', subtitulo: '', img: '../../img/Kiosco - Menú/alfajores/turron.png', precio: 1000 },
+    { titulo: 'Mentitas', subtitulo: 'Sabor Multifruta', img: '../../img/Kiosco - Menú/caramelos/mentitas.png', precio: 1000 },
+    { titulo: 'Mentitas', subtitulo: 'Sabor Menta', img: '../../img/Kiosco - Menú/caramelos/mentitas.png', precio: 1000 },
+    { titulo: 'Pitusas', subtitulo: 'Sabor Limón', img: '../../img/Kiosco - Menú/pitusas.png', precio: 1000 },
+    { titulo: 'Mentitas', subtitulo: 'Sabor Dulce de Leche', img: '../../img/Kiosco - Menú/caramelos/mentitas.png', precio: 1000 }
     // Agrega más productos si es necesario
 ];
 
 let productosGalletitas = [
-    { titulo: 'Galletita de chocolate', subtitulo: 'Galletita deliciosa', img: '../../img/Sin título.png' },
-    { titulo: 'Galletita de vainilla', subtitulo: 'Galletita suave', img: '../../img/Sin título.png' },
-    { titulo: 'Galletita rellena', subtitulo: 'Galletita con relleno', img: '../../img/Sin título.png' },
+    { titulo: 'Papas Fritas', subtitulo: '', img: '../../img/Kiosco - Menú/papas.png', precio: 1000 },
+    { titulo: 'Saladix', subtitulo: 'Sabor Salame', img: '../../img/Kiosco - Menú/saladix.png', precio: 1000 },
+    { titulo: 'Alfajor Guaymallen', subtitulo: 'Blanco', img: '../../img/Kiosco - Menú/alfajores/guaymallenb.png', precio: 1000 },
+    { titulo: 'Alfajor Guaymallen', subtitulo: 'Negro', img: '../../img/Kiosco - Menú/alfajores/guaymallenn.png', precio: 1000 }
     // Agrega más productos si es necesario
 ];
+
 
 
 // Cargar productos de acuerdo a la categoría
@@ -76,16 +73,20 @@ function cargarProductos(categoria) {
   productosContainer.innerHTML = ''; // Limpiar el contenedor
 
   productosAPasar.forEach(producto => {
-      const card = document.createElement('div');
-      card.className = 'cards';
-      card.innerHTML = `
-          <img src="${producto.img}" alt="Imagen">
-          <h1>${producto.titulo}</h1>
-          <span>${producto.subtitulo}</span>
-          <div class="extra"></div>
-      `;
-      productosContainer.appendChild(card);
-  });
+    const card = document.createElement('div');
+    card.className = 'cards';
+    card.innerHTML = `
+        <img src="${producto.img}" alt="Imagen">
+        <h1>${producto.titulo}</h1>
+        <span>${producto.subtitulo}</span>
+        <div class="extra">
+            <button>Añadir Al Carrito</button>
+            <span id=precio>Precio: $${producto.precio}</span>
+        </div>
+    `;
+    productosContainer.appendChild(card);
+});
+
 
   crearPaginacion(categoria); // Crear la paginación después de mostrar productos
 }
