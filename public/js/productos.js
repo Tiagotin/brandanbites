@@ -3,8 +3,7 @@ const categorias = document.querySelectorAll('.categorias');
 
 // Variables de paginación
 let paginaActual = 1;
-let productosPorPagina = 5; // Cambia esto según cuántos productos quieras mostrar por página
-let totalPaginas = 0;
+let productosPorPagina = 2;
 let categoriaActual = 'comidas'; // Valor inicial
 
 
@@ -79,9 +78,10 @@ function cargarProductos(categoria) {
         <img src="${producto.img}" alt="Imagen">
         <h1>${producto.titulo}</h1>
         <span>${producto.subtitulo}</span>
+        <span id=precio>Precio: $${producto.precio}</span>
         <div class="extra">
+            <input type="number" name="cantidad" id="cantidad" max="10" min="1">
             <button>Añadir Al Carrito</button>
-            <span id=precio>Precio: $${producto.precio}</span>
         </div>
     `;
     productosContainer.appendChild(card);

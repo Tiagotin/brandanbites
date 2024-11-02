@@ -20,6 +20,7 @@
     --color3: #F9C784;
     --color4: #FCAF58;
     --color5: #FF8C42;
+    --color6: #ff9f4b;
 }
 html,
 body {
@@ -186,9 +187,7 @@ main {
 
 
 main{
-    
     max-width: 3000px;
-    max-height: 3000px;
 }
 /*=======================Login.html=========================*/
 
@@ -409,150 +408,201 @@ main{
     flex: 1;
     width: 100%;
     margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 50px 30px 30px;
+    align-items: start;
 }
 
-#mainCatalogo aside {
-    border-right: solid 1px;
-    padding: 50px 55px 0 35px;
-    font-size: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    background-color: var(--color4);
-}
-
-#mainCatalogo aside ul {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-#mainCatalogo aside {
-
-    >h1,
-    a {
-        color: #000 !important;
-    }
-}
-
-#mainCatalogo section {
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
+#mainCatalogo h4{
     width: 100%;
+    text-align: center;
+    font-size: clamp(8px, 1vw + 1.5rem, 48px);
+    padding: 0 0 20px;
+}
+
+#mainCatalogo aside{
+    width: 230px;
+    margin-right: 30px;
+    background-color: #ffffff42;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
     gap: 40px;
-    min-height: 600px;
-    background-color: var(--color3);
 }
 
-#mainCatalogo section .categorias {
-    display: none;
-}
-
-#mainCatalogo section .categorias.active {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-#mainCatalogo section .categorias h2 {
-    display: flex;
-    gap: 12px;
-    letter-spacing: 1px;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 30px;
-
-    >a:nth-child(2) {
-        font-size: 1.3rem;
-        font-weight: 300;
-    }
-}
-
-#mainCatalogo section .categorias .productos {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-#mainCatalogo section .categorias .cards {
-    margin: 0 auto;
-    width: 85%;
-    background-color: var(--color2);
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    grid-template-rows: max-content max-content 1fr;
-    grid-template-areas:
-        "img titulo"
-        "img subtitulo"
-        "img extra";
-    padding: 15px 20px;
-    border-radius: 10px;
-
-    >h1 {
-        font-size: 1.4rem;
-        font-weight: 500;
-    }
-
-    >span {
-        font-size: 1.2rem;
-        font-weight: 400;
-    }
-}
-
-#mainCatalogo section .categorias .cards img {
-    grid-area: img;
-    height: 170px;
-    width: 100%;
-}
-
-#mainCatalogo section .categorias .cards h1 {
-    grid-area: titulo;
-    padding: 0 15px 5px;
-    font-size: clamp(12px, 1rem + 1vw, 24px);
-}
-
-#mainCatalogo section .categorias .cards span {
-    grid-area: subtitulo;
-    padding: 0 15px;
-    font-size: clamp(12px, 0.5rem + 1vw, 24px);
-}
-
-#mainCatalogo section .categorias .cards .extra {
-    grid-area: extra;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    font-size: clamp(12px, 1.2rem + 1vw, 24px);
-}
-
-#mainCatalogo section .categorias .cards .extra button {
-    border: none;
+#mainCatalogo aside input{
     padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: clamp(8px, 0.4rem + 1vw, 24px);
+    font-size: 0.9rem;
 }
 
-#mainCatalogo section .categorias .paginacion {
-    padding: 20px 0;
+#mainCatalogo aside ul{
     display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 10px;
-    flex: 1;
+    flex-direction: column;
+    gap: 30px;
 }
 
-#mainCatalogo section .categorias .paginacion button {
-    border: none;
-    padding: 5px calc(5px * 2.6);
-    border-radius: 50%;
+#mainCatalogo aside ul li{
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    border: solid 2px;
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+}
+#mainCatalogo aside ul li a{position: relative; flex:1;}
+
+#mainCatalogo section{
+    background-color: #00000042;
+    overflow: auto;
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainCatalogo section .categorias {display: none;}
+#mainCatalogo section .categorias.active {display: flex; flex: 1;}
+
+#mainCatalogo section{
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainCatalogo section .categorias.active{
+    flex-direction: column;
+    gap: 20px;
+}
+
+#mainCatalogo section .categorias.active h2{
+    font-size: clamp(8px, 1vw + 1rem, 32px);
+}
+
+#mainCatalogo section .categorias.active .productos{
+    display: flex;
+    flex-direction: column;   
+    gap: 30px;
+}
+
+#mainCatalogo section .categorias.active .productos .cards{
     border: solid 1px;
-    font-size: 1.3rem;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: repeat(4, max-content) 1fr;
+    grid-template-areas: 
+    "imgProd h1Prod"
+    "imgProd spanProd"
+    "imgProd precioProd"
+    "imgProd extraProd"
+    "imgProd extraProd"
+    ;
+    gap: 0px 20px;
+    justify-items: start;
+}
+
+#mainCatalogo section .categorias.active .productos .cards img{
+    grid-area: imgProd;
+    display: block;
+    width: 100%;
+}
+
+#mainCatalogo section .categorias.active .productos .cards h1{
+    grid-area: h1Prod;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: clamp(24px, 1vw + 0.9rem, 32px);
+}
+
+#mainCatalogo section .categorias.active .productos .cards span{
+    grid-area: spanProd;
+    margin-bottom: 5px;
+    font-size: clamp(16px, 1vw + 0.5rem, 24px);
+}
+
+#mainCatalogo section .categorias.active .productos .cards span#precio{
+    grid-area: precioProd;
+}
+
+#mainCatalogo section .categorias.active .productos .cards .extra{
+    grid-area: extraProd;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#mainCatalogo section .categorias.active .productos .cards .extra input{
+    padding: 5px 0;
+    font-size: 1.15rem;
+    text-align: center;
+}
+#mainCatalogo section .categorias.active .productos .cards .extra input:focus{outline: none;}
+
+#mainCatalogo section .categorias.active .productos .cards .extra button{padding: 5px 10px;}
+
+#mainCatalogo section .categorias.active .paginacion{
+    display: flex;
+    background-color: var(--color2);
+    padding: 15px 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 40px;
+    border-radius: 15px;
+    gap: 8px;
+}
+
+#mainCatalogo section .categorias.active .paginacion button{
+    padding: 5px 10px;
+    border: solid 1px #f0f0f0;
+    background-color: #fff;
+    color: #000;
+    font-size: clamp( 6px, 1vw + 0.8rem, 20px);
+    border-radius: 10px;
     cursor: pointer;
 }
 
+#mainCatalogo section .categorias.active .paginacion button.pagina-activa{
+    background-color: var(--color6);
+    color: #fff;
+    border: none;
+}
+
+
+@media (max-width: 768px){
+
+    #mainCatalogo{flex-direction: column; gap: 10px;}
+
+    #mainCatalogo aside{
+        width: 100%; margin-bottom: 20px;
+    }
+
+    #mainCatalogo section{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    
+    #mainCatalogo section .categorias.active .productos .cards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mainCatalogo section .categorias.active .productos .cards h1{margin: 0;}
+    #mainCatalogo section .categorias.active .productos .cards .extra{
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+    }
+
+    #mainCatalogo section .categorias.active .productos .cards .extra button{width: 100%;}
+}
 /*=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=*/
 
 /*=======================info.html=========================*/
@@ -757,26 +807,6 @@ main{
         background-color: #FF8C42;
         padding: 5px;
         font-size: clamp(14px, 2vw + 1rem, 18px);
-    }
-
-    #mainCatalogo section .categorias.active .productos {
-        border: solid 4px green;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(180px, 1fr));
-        gap: 20px;
-        justify-content: center;
-    }
-
-    #mainCatalogo section .categorias .cards {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #mainCatalogo section .categorias .cards img {
-        width: 100%;
     }
 
     header .buscador {
