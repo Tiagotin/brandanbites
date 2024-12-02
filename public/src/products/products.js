@@ -1,72 +1,45 @@
-export let productosComidas = [  // Definición de productos por categoría
-    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: 'comidas/hamburguesa.png', precio: 1000 },
-    { titulo: 'Pebete', subtitulo: 'único', img: 'comidas/pebete.png', precio: 1000 },
-    { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: 'comidas/sanguche.png', precio: 1000 }
-    // Agrega más productos si es necesario
+export let productosComidas = [
+    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../../src/products/comidas/hamburguesa.png', precio: 1000 },
+    { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 1000 },
+    { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: '../../../src/products/comidas/sanguche.png', precio: 1000 },
+    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../../src/products/comidas/hamburguesa.png', precio: 1000 },
+    { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 1000 },
+    { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: '../../../src/products/comidas/sanguche.png', precio: 1000 },
+    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../../src/products/comidas/hamburguesa.png', precio: 1000 },
+    { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 1000 },
+    { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: '../../../src/products/comidas/sanguche.png', precio: 1000 },
 ];
 
 export let productosBebidas = [
-    { titulo: 'Coca-Cola',  subtitulo: 'Original', img: 'bebidas/cocacolag.png', precio: 100},
-    { titulo: 'Baggio',  subtitulo: 'Chico', img: 'bebidas/baggiochiquito.png', precio: 100},
-    { titulo: 'Baggio',  subtitulo: 'Grande', img: 'bebidas/baggiolitro.png', precio: 100},
-        // Agrega más productos si es necesario
+    { titulo: 'Coca-Cola', subtitulo: 'Original', img: '../../../src/products/bebidas/cocacolag.png', precio: 100 },
+    { titulo: 'Baggio', subtitulo: 'Chico', img: '../../../src/products/bebidas/baggiochiquito.png', precio: 100 },
+    { titulo: 'Baggio', subtitulo: 'Grande', img: '../../../src/products/bebidas/baggiolitro.png', precio: 100 }
 ];
 
 export let productosDulces = [
-    { titulo: 'Mentitas', subtitulo: 'Sabor Multifruta', img: 'dulces/mentitas.png', precio: 1000 },
-    { titulo: 'Mentitas', subtitulo: 'Sabor Menta', img: 'dulces/mentitas.png', precio: 1000 },
-    { titulo: 'Mentitas', subtitulo: 'Sabor Dulce de Leche', img: 'dulces/mentitas.png', precio: 1000 }
-    // Agrega más productos si es necesario
+    { titulo: 'Mentitas', subtitulo: 'Multifruta', img: '../../../src/products/dulces/mentitas.png', precio: 1000 },
+    { titulo: 'Mentitas', subtitulo: 'Menta', img: '../../../src/products/dulces/mentitas.png', precio: 1000 }
 ];
 
 export let productosGalletitas = [
-    { titulo: 'Papas Fritas', subtitulo: '', img: 'snacks/papas.png', precio: 1800 },
-    { titulo: 'Alfajor Block', subtitulo: '', img: 'snacks/alfajorblock.png', precio: 1000 },
-    { titulo: 'Alfajor milka', subtitulo: '', img: 'snacks/alfajormilka.png', precio: 1000 },
-    // Agrega más productos si es necesario
+    { titulo: 'Papas Fritas', subtitulo: '', img: '../../../src/products/snacks/papas.png', precio: 1800 },
+    { titulo: 'Alfajor Block', subtitulo: '', img: '../../../src/products/snacks/alfajorblock.png', precio: 1000 }
 ];
 
-// Cargar productos de acuerdo a la categoría
-export function cargarProductos(categoria) {
-    let productos;
+// Retorna productos según categoría
+export function obtenerProductos(categoria) {
     switch (categoria) {
+        case '':
         case 'comidas':
-            productos = productosComidas;
-            break;
+            return productosComidas;
         case 'bebidas':
-            productos = productosBebidas;
-            break;
+            return productosBebidas;
         case 'dulces':
-            productos = productosDulces;
-            break;
+            return productosDulces;
         case 'galletitas':
-            productos = productosGalletitas;
-            break;
+            return productosGalletitas;
         default:
-            productos = productosComidas;
+            return productosComidas; // Categoría por defecto
     }
-    return productos
-    
-    totalPaginas = Math.ceil(productos.length / productosPorPagina);
+}
 
-    const inicio = (paginaActual - 1) * productosPorPagina;
-    const fin = inicio + productosPorPagina;
-    const productosAPasar = productos.slice(inicio, fin); // Obtener productos para la página actual
-
-    const productosContainer = document.getElementById(`productos-container-${categoria}`);
-    productosContainer.innerHTML = ''; // Limpiar el contenedor
-
-    productosAPasar.forEach(producto => {
-        const card = document.createElement('div');
-        card.className = 'cards';
-        card.innerHTML = `
-            <img src="${producto.img}" alt="Imagen">
-            <h1>${producto.titulo}</h1>
-            <span>${producto.subtitulo}</span>
-            <div class="extra"></div>
-        `;
-        productosContainer.appendChild(card);
-    });
-
-    crearPaginacion(categoria); // Crear la paginación después de mostrar productos
-  }
