@@ -8,42 +8,23 @@ let totalPaginas = 0;
 let categoriaActual = 'comidas'; // Valor inicial
 
 
+
 // Definición de productos por categoría
 let productosComidas = [
-    { titulo: 'Titulo', subtitulo: 'Subtitulo', img: '../../img/Sin título.png' },
-    { titulo: 'Pancho', subtitulo: 'Con Papas', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino3', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino4', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino5', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino6', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino7', subtitulo: 'mmm ñannn', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino8', subtitulo: 'Jugosa hamburguesa', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino9', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    { titulo: 'Sebino10', subtitulo: 'Ensalada fresca', img: '../../img/Sin título.png' },
-    // Agrega más productos si es necesario
+    { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../img/Kiosco - Menú/baggio.png', precio: 1000 }
 ];
 
 let productosBebidas = [
-    { titulo: 'Coca-Cola', subtitulo: 'Refresco clásico', img: '../../img/Sin título.png' },
-    { titulo: 'Agua', subtitulo: 'Agua mineral', img: '../../img/Sin título.png' },
-    { titulo: 'Jugo', subtitulo: 'Jugo natural', img: '../../img/Sin título.png' },
-    // Agrega más productos si es necesario
+    { titulo: 'Coca-Cola', subtitulo: 'Original', img: '../../../../img/Kiosco - Menú/cocacolag.png', precio: 1000 }
 ];
 
 let productosDulces = [
-    { titulo: 'Chocolate', subtitulo: 'Chocolate oscuro', img: '../../img/Sin título.png' },
-    { titulo: 'Galleta', subtitulo: 'Galleta de vainilla', img: '../../img/Sin título.png' },
-    { titulo: 'Dulce de leche', subtitulo: 'Delicioso dulce de leche', img: '../../img/productos/dulce de leche.png' },
-    // Agrega más productos si es necesario
+    { titulo: 'Turron', subtitulo: '', img: '../../img/Kiosco - Menú/alfajores/turron.png', precio: 1000 }
 ];
 
 let productosGalletitas = [
-    { titulo: 'Galletita de chocolate', subtitulo: 'Galletita deliciosa', img: '../../img/Sin título.png' },
-    { titulo: 'Galletita de vainilla', subtitulo: 'Galletita suave', img: '../../img/Sin título.png' },
-    { titulo: 'Galletita rellena', subtitulo: 'Galletita con relleno', img: '../../img/Sin título.png' },
-    // Agrega más productos si es necesario
+    { titulo: 'Papas Fritas', subtitulo: '', img: '../../img/Kiosco - Menú/papas.png', precio: 1000 }
 ];
-
 
 // Cargar productos de acuerdo a la categoría
 function cargarProductos(categoria) {
@@ -79,10 +60,14 @@ function cargarProductos(categoria) {
       const card = document.createElement('div');
       card.className = 'cards';
       card.innerHTML = `
-          <img src="${producto.img}" alt="Imagen">
-          <h1>${producto.titulo}</h1>
-          <span>${producto.subtitulo}</span>
-          <div class="extra"></div>
+      <img src="${producto.img}" alt="Imagen">
+      <h1>${producto.titulo}</h1>
+      <span>${producto.subtitulo}</span>
+      <span id=precio>Precio: $${producto.precio}</span>
+      <div class="extra">
+          <input type="number" name="cantidad" id="cantidad" max="10" min="1">
+          <button>Añadir Al Carrito</button>
+      </div>
       `;
       productosContainer.appendChild(card);
   });
