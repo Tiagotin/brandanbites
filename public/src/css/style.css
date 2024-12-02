@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Quicksand';
-    src: url('../../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'League_Spartan';
-    src: url('../../fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
 
