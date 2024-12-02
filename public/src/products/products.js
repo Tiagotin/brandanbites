@@ -46,4 +46,27 @@ export function cargarProductos(categoria) {
             productos = productosComidas;
     }
     return productos
+    
+    totalPaginas = Math.ceil(productos.length / productosPorPagina);
+
+    const inicio = (paginaActual - 1) * productosPorPagina;
+    const fin = inicio + productosPorPagina;
+    const productosAPasar = productos.slice(inicio, fin); // Obtener productos para la página actual
+
+    const productosContainer = document.getElementById(`productos-container-${categoria}`);
+    productosContainer.innerHTML = ''; // Limpiar el contenedor
+
+    productosAPasar.forEach(producto => {
+        const card = document.createElement('div');
+        card.className = 'cards';
+        card.innerHTML = `
+            <img src="${producto.img}" alt="Imagen">
+            <h1>${producto.titulo}</h1>
+            <span>${producto.subtitulo}</span>
+            <div class="extra"></div>
+        `;
+        productosContainer.appendChild(card);
+    });
+
+    crearPaginacion(categoria); // Crear la paginación después de mostrar productos
   }
