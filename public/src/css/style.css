@@ -405,66 +405,69 @@ main{
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    padding: 50px 30px 30px;
+    padding: 40px 80px 30px;
     align-items: start;
 }
 
-#mainCatalogo h4{
-    width: 100%;
-    text-align: center;
-    font-size: clamp(8px, 1vw + 1.5rem, 48px);
-    padding: 0 0 20px;
-}
 
 #mainCatalogo aside{
-    width: 230px;
+    padding: 15px 20px;
+    padding-right:  clamp(10px, 5vw, 50px);
     margin-right: 30px;
-    background-color: #ffffff42;
+    background-color: var(--color2);
+    border: solid 2px #eeeef0;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    gap: 40px;
-}
-
-#mainCatalogo aside input{
-    padding: 5px 10px;
-    font-size: 0.9rem;
-}
+}   
 
 #mainCatalogo aside ul{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    padding: 15px 0px;
+    gap: 10px;
 }
 
 #mainCatalogo aside ul li{
-    padding: 5px 0;
-    width: 100%;
-    text-align: center;
-    border: solid 2px;
-    color: #fff;
-    font-size: 1.4rem;
-    display: flex;
+    font-size: clamp(12px, 0.8rem + 0.5vw, 32px);
 }
-#mainCatalogo aside ul li a{position: relative; flex:1;}
+
+#mainCatalogo aside ul li a{
+    position: relative; 
+    display: flex;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 600;    
+}
+#mainCatalogo aside ul li a p{padding-right: 12px;}
+
+
+#mainCatalogo aside ul li a:hover{background-color: #f0f0f0}
+#mainCatalogo aside ul li a::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    right: -10px;
+    bottom: -5px;
+}
+
 
 #mainCatalogo section{
-    background-color: #00000042;
     overflow: auto;
     flex: 1;
-    padding: 15px;
     display: flex;
     flex-direction: column;
+    gap: 14px;
+}
+
+#mainCatalogo section h1{
+    font-size: clamp(24px, 1.6rem + 0.5vw, 52px);
 }
 
 #mainCatalogo section .categorias {display: none;}
 #mainCatalogo section .categorias.active {display: flex; flex: 1;}
 
-#mainCatalogo section{
-    padding: 20px 25px;
-    display: flex;
-    flex-direction: column;
-}
 
 #mainCatalogo section .categorias.active{
     flex-direction: column;
@@ -478,14 +481,16 @@ main{
 #mainCatalogo section .categorias.active .productos{
     display: flex;
     flex-direction: column;   
-    gap: 30px;
+    gap: 20px;
 }
 
 #mainCatalogo section .categorias.active .productos .cards{
-    border: solid 1px;
+    background-color: var(--color2);
+    border-radius: 8px;
+    border: solid 1px #eeeef0;
     padding: 20px;
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 150px 1fr;
     grid-template-rows: repeat(4, max-content) 1fr;
     grid-template-areas: 
     "imgProd h1Prod"
@@ -494,8 +499,9 @@ main{
     "imgProd extraProd"
     "imgProd extraProd"
     ;
-    gap: 0px 20px;
+    gap: 0px 30px;
     justify-items: start;
+    align-items: center;
 }
 
 #mainCatalogo section .categorias.active .productos .cards img{
@@ -507,14 +513,16 @@ main{
 #mainCatalogo section .categorias.active .productos .cards h1{
     grid-area: h1Prod;
     margin: 0;
-    margin-bottom: 20px;
-    font-size: clamp(24px, 1vw + 0.9rem, 32px);
+    font-size: clamp(24px, 0.8vw + 0.9rem, 32px);
+    font-weight: 700;
 }
 
-#mainCatalogo section .categorias.active .productos .cards span{
+#mainCatalogo section .categorias.active .productos .cards span#desc{
     grid-area: spanProd;
     margin-bottom: 5px;
-    font-size: clamp(16px, 1vw + 0.5rem, 24px);
+    color: #787e8b;
+    font-size: clamp(16px, 0.7vw + 0.5rem, 24px);
+    font-weight: 500;
 }
 
 #mainCatalogo section .categorias.active .productos .cards span#precio{
@@ -523,20 +531,28 @@ main{
 
 #mainCatalogo section .categorias.active .productos .cards .extra{
     grid-area: extraProd;
-    margin-top: 40px;
     display: flex;
     align-items: center;
+    width: 100%;
     gap: 10px;
 }
 
-#mainCatalogo section .categorias.active .productos .cards .extra input{
-    padding: 5px 0;
-    font-size: 1.15rem;
-    text-align: center;
+#mainCatalogo section .categorias.active .productos .cards .extra span{
+    color: #1fa651;
+    font-size: clamp(16px, 0.85vw + 0.5rem, 24px);
+    font-weight: 800;
+    flex: 1;
 }
-#mainCatalogo section .categorias.active .productos .cards .extra input:focus{outline: none;}
 
-#mainCatalogo section .categorias.active .productos .cards .extra button{padding: 5px 10px;}
+#mainCatalogo section .categorias.active .productos .cards .extra .cantidadProd{
+    display: flex;
+    gap: 5px;
+}
+
+#mainCatalogo section .categorias.active .productos .cards .extra .cantidadProd .pCantidad{
+    font-size: 1.2rem;
+    padding: 2px 5px;
+}
 
 #mainCatalogo section .categorias.active .paginacion{
     display: flex;

@@ -8,8 +8,15 @@ export function renderizarProductos(productos, contenedorId) {
         card.innerHTML = `
             <img src="${producto.img}" alt="${producto.titulo}" loading="lazy">
             <h1>${producto.titulo}</h1>
-            <span>${producto.subtitulo}</span>
-            <div class="extra">Precio: $${producto.precio}</div>
+            <span id="desc">${producto.subtitulo}</span>
+            <div class="extra">
+                <span>$${producto.precio}</span>                
+                <div class="cantidadProd">
+                    <button class="pCantidad restar">-</button>
+                    <h4 class="pCantidad cantidad">1</h4>
+                    <button class="pCantidad sumar">+</button>
+                </div>
+            </div>
         `;
         contenedor.appendChild(card);
     });

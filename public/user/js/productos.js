@@ -5,7 +5,7 @@ const catalogo = document.getElementById('catalogos');
 const categorias = document.querySelectorAll('.categorias');
 
 let paginaActual = 1;
-let productosPorPagina = 4;
+let productosPorPagina = 10;
 
 function cargarProductosPorPagina(categoria) {
     const productos = obtenerProductos(categoria);
@@ -46,3 +46,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(storedValue).classList.add('active'); // Resaltar categoría activa
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const contadores = document.querySelectorAll('.cantidadProd');
+    
+    function suma (){
+        cantidadActual -= 1;
+        pCantidad.innerHTML = cantidadActual;
+        console.log(cantidadActual);        
+    }
+
+    function resta(){
+        cantidadActual += 1;
+        pCantidad.innerHTML = cantidadActual;
+        console.log(cantidadActual);
+    }
+
+    contadores.forEach(contador => {
+        const restar = contador.querySelector('.restar');
+        const sumar = contador.querySelector('.sumar');
+        const pCantidad = contador.querySelector('.cantidad');
+
+        let cantidadActual = parseInt(pCantidad.innerHTML);
+
+        restar.addEventListener('click', resta());
+        sumar.addEventListener('click', suma());
+    });
+});
+
+
+    

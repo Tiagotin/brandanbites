@@ -1,6 +1,6 @@
 export let productosComidas = [
     { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../../src/products/comidas/hamburguesa.png', precio: 1000 },
-    { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 1000 },
+    { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 9000 },
     { titulo: 'Sanguche de Milanesa', subtitulo: 'Completo', img: '../../../src/products/comidas/sanguche.png', precio: 1000 },
     { titulo: 'Hamburguesa', subtitulo: 'Completa', img: '../../../src/products/comidas/hamburguesa.png', precio: 1000 },
     { titulo: 'Pebete', subtitulo: 'único', img: '../../../src/products/comidas/pebete.png', precio: 1000 },
