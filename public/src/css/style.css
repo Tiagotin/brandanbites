@@ -14,12 +14,12 @@
 
 :root {
     --font-system: League_Spartan;
-    --color1: #626fa7;
-    --color2: #FFFFFF;
-    --color3: #F9C784;
-    --color4: #FCAF58;
-    --color5: #FF8C42;
-    --color6: #ff9f4b;
+    --color1: #F97316; /* Naranja */
+    --color2: #FFFFFF; /* Blanco */
+    --color3: #FFE5C5; /* Champagne */
+    --color4: #F97316; /* Naranja */
+    --color5: #F97316; /* Naranja */
+    --color6: #FFE5C5; /* Champagne */
 }
 html,
 body {

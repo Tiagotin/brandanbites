@@ -1,4 +1,3 @@
-
 const btn = document.getElementById('adminBtn');
 const menu = document.querySelector(".desplegableUser");
 
