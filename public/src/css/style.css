@@ -126,6 +126,11 @@ header .buscador input:focus {
     font-size: 1.3rem;
     color: var(--color2);
     font-weight: 600;
+    background-color: #F97D24;
+    transition: 0.2s ease;
+}
+.botones a:nth-child(1):hover{
+    background-color: #FBA060;
 }
 
 nav {
@@ -457,6 +462,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 14px;
+    padding: 0 20px;
 }
 
 #mainCatalogo section h1{
@@ -500,6 +506,12 @@ main{
     gap: 0px 30px;
     justify-items: start;
     align-items: center;
+    box-shadow: 0px 5px 15px #0000002d ;
+    transition: 0.2s ease;
+}
+
+#mainCatalogo section .categorias.active .productos .cards:hover{
+    box-shadow: 0px 10px 15px #0000001a ;
 }
 
 #mainCatalogo section .categorias.active .productos .cards img{
@@ -699,7 +711,7 @@ main{
     align-items: center;
 }
 .horario-encabezado{
-    background-color: var(--color4);
+    background-color: var(--color1);
     padding: 25px;
     border-radius: 15px 15px 0px 0px;
 }

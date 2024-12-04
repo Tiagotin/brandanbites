@@ -18,7 +18,8 @@ export let productosBebidas = [
 
 export let productosDulces = [
     { titulo: 'Mentitas', subtitulo: 'Multifruta', img: '../../../src/products/dulces/mentitas.png', precio: 1000 },
-    { titulo: 'Mentitas', subtitulo: 'Menta', img: '../../../src/products/dulces/mentitas.png', precio: 1000 }
+    { titulo: 'Mentitas', subtitulo: 'Menta', img: '../../../src/products/dulces/mentitas.png', precio: 1000 },
+    { titulo: 'Pico Dulce', subtitulo: 'Caramelo', img: '../../../src/products/dulces/picodulce.jpg', precio: 400}
 ];
 
 export let productosGalletitas = [
