@@ -16,6 +16,7 @@ export function renderizarProductos(productos, contenedorId) {
                     <h4 class="pCantidad cantidad">1</h4>
                     <button class="pCantidad sumar">+</button>
                 </div>
+                <button class="addCarrito">Añadir al Carrito</button>    
             </div>
         `;
         contenedor.appendChild(card);
